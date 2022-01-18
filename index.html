@@ -1,63 +1,71 @@
 <!Doctype html>
 <html lang="en">
-  <head>
-    <script src="lz-string.min.js" defer></script>
-    <script src="squalbum.js" defer></script>
-  </head>
-  <body>
-    <h1>squalbum</h1>
-    <section>
-      <p>Welcome to <strong>squalbum</strong>! squalbum is like <a href="https://www.powerlanguage.co.uk/wordle/">wordle</a> except with images (in this case: album covers).</p>
-      <h2>how to play</h2>
-      <p>Your goal is to guess the album title! Click on squares to reveal portions of the album cover beneath. Some notes:</p>
-      <ul>
-        <li>guess only the album title and not the artist.</li>
-        <li>ignore the "difficulty" slider (I mean, feel free to play with it but its under development and can be used to cheat)</li>
-        <li>if you want to play again, click <strong>clear state</strong> and hit refresh</li>
-        <li><strong>comming soon</strong>: you will be able to create your own squalbum and share with friends.</li>
-      </ul>
-    </section>
-    <section>
 
-      <menu>
-        <button id="create-image-modal-btn">Create your own!</button>
-      </menu>
+<head>
+  <script src="lz-string.min.js" defer></script>
+  <script src="squalbum.js" defer></script>
+</head>
 
-      <dialog id="create-dialog">
-        <h2>Create your own game!!</h2>
-        <p>Simply paste an image URL below to generate a link for a unique game using your image!</p>
-        <form method="dialog">
-          <label for="create-image-url">image URL:</label>
-          <input id="create-image-url" name="create-image-url" type="url" />
-          <br />
-          <label for="create-image-title">album title:</label>
-          <input id="create-image-title" name="create-image-title" type="text" />
-          <br />
-          <input id="generate-game-url" type="button" value="Generate URL!" />
-        </form>
-        <hr />
-        <div id="generated-img-url"></div>
-        <hr />
-        <div id="create-dialog-img"></div>
-      </dialog>
+<body>
+  <h1>squalbum</h1>
+  <section>
+    <p>Welcome to <strong>squalbum</strong>! squalbum is like <a
+        href="https://www.powerlanguage.co.uk/wordle/">wordle</a> except with images (in this case: album covers).</p>
+    <h2>how to play</h2>
+    <p>Your goal is to guess the album title! Click on squares to reveal portions of the album cover beneath. Some
+      notes:</p>
+    <ul>
+      <li>guess only the album title and not the artist.</li>
+      <li>ignore the "difficulty" slider (I mean, feel free to play with it but its under development and can be used to
+        cheat)</li>
+      <li>if you want to play again, click <strong>clear state</strong> and hit refresh</li>
+      <li><strong>comming soon</strong>: you will be able to create your own squalbum and share with friends.</li>
+    </ul>
+  </section>
+  <section>
 
-    </section>
-    <section>
-      <input id="difficulty" type="range" min="1" max="16" name="difficulty" value="8" />
-      <label for="difficulty">difficulty</label>
-    </section>
-    <section id="admin">
-    </section>
-    <section>
+    <menu>
+      <button id="create-image-modal-btn">Create your own!</button>
+    </menu>
+
+    <dialog id="create-dialog">
+      <h2>Create your own game!!</h2>
+      <p>Simply paste an image URL below to generate a link for a unique game using your image!</p>
+      <form method="dialog">
+        <label for="create-image-url">image URL:</label>
+        <input id="create-image-url" name="create-image-url" type="url" />
+        <br />
+        <label for="create-image-title">album title:</label>
+        <input id="create-image-title" name="create-image-title" type="text" />
+        <br />
+        <input id="generate-game-url" type="button" value="Generate URL!" />
+      </form>
       <hr />
-    </section>
-    <section>
-      <label for="name">Album title:</label>
-      <input type="text" id="album-guess" name="album-guess" minlength="1" size="40">
-      <input id="album-guess-btn" type="button" value="guess!">
-    </section>
-    <section id="dialog"></section>
-    <section><hr /></section>
-    <canvas id="canvas" width="600" height="600"></canvas>
-  </body>
+      <div id="generated-img-url"></div>
+      <hr />
+      <div id="create-dialog-img"></div>
+    </dialog>
+
+  </section>
+  <section>
+    <input id="difficulty" type="range" min="1" max="16" name="difficulty" value="8" />
+    <label for="difficulty">difficulty</label>
+  </section>
+  <section id="admin">
+  </section>
+  <section>
+    <hr />
+  </section>
+  <section>
+    <label for="name">Album title:</label>
+    <input type="text" id="album-guess" name="album-guess" minlength="1" size="40">
+    <input id="album-guess-btn" type="button" value="guess!">
+  </section>
+  <section id="dialog"></section>
+  <section>
+    <hr />
+  </section>
+  <canvas id="canvas" width="600" height="600"></canvas>
+</body>
+
 </html>
