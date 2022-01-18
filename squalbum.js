@@ -218,6 +218,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
       image: {
         width: imageTileWidth,
         height: imageTileHeight,
+        // TODO(aaronlevin): we may not want this in
+        // case we ever want to serialize and store
+        // the game object
+        ref: img,
       },
       tile: {
         width: canvasTileWidth,
@@ -323,46 +327,64 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function cleanString(str) {
     return str.trim().toLowerCase();
   }
-  // render a summary string for a 
-  // correct guess
-  function renderSummary(gameObject) {
-    const numRects = getNumRects()
-    let buffer = "";
-    gameObject.rectangles.forEach((rect, index) => {
-      if (index % numRects == 0 && index != 0) {
-        buffer += "\n";
-      }
-      if (rect.clicked) {
-        buffer += " * ";
-      } else {
-        buffer += "[-]";
-      }
-    });
-    return buffer;
-  }
-  function renderGameObjectAsImage(gameObject, image, canvas) {
-    const imageCanvas = document.createElement('canvas');
-    imageCanvas.width = 400;
-    imageCanvas.height = 400;
 
-    const length = Math.ceil(400/gameObject.numRects);
+  // returns a promise containing the image
+  function renderGameObjectAsImage(gameObject, albumImage, canvas) {
+    const imageCanvas = document.createElement('canvas');
+    const imageCtx = imageCanvas.getContext('2d');
+    imageCanvas.width = albumImage.width;
+    imageCanvas.height = albumImage.height;
+
+    let promises = [];
 
     gameObject.rectangles.forEach((rect) => {
-      const canvas = document.createElement('canvas');
-      const width = gameObject.image.width;
-      const height = gameObject.image.height;
-      canvas.width = width;
-      canvas.height = height;
-      const ctx = canvas.getContext('2d');
-      let sx = rect.image.x;
-      let sy = rect.image.y;
-      ctx.drawImage(image, sx, sy, width, height, 0, 0, width, height);
+      if(rect.clicked) {
+        const tmpCanvas = document.createElement('canvas');
+        const width = gameObject.image.width;
+        const height = gameObject.image.height;
+        tmpCanvas.width = width;
+        tmpCanvas.height = height;
+        const tmpCtx = tmpCanvas.getContext('2d');
+        let sx = rect.image.x;
+        let sy = rect.image.y;
+        tmpCtx.drawImage(albumImage, sx, sy, width, height, 0, 0, width, height);
 
-      let image = new Image();
-      image.src = canvas.toDataURL();
+        let image = new Image(width, height);
+        image.src = tmpCanvas.toDataURL();
 
-      const color = fac.getColor(image);
+        promises.push(fac.getColorAsync(image).then(color => {
+          let value = {
+            color: color,
+            fill: [rect.image.x, rect.image.y, width, height]
+          };
+          return value;
+        }));
+
+      } else {
+        imageCtx.fillStyle = '#000000';
+        imageCtx.fillRect(rect.image.x, rect.image.y, gameObject.image.width, gameObject.image.height);
+        imageCtx.fillStyle = '#AAAAAA';
+        let cx = rect.image.x + gameObject.image.width / 2;
+        let cy = rect.image.y + gameObject.image.height / 2;
+        imageCtx.beginPath();
+        imageCtx.arc(cx, cy, 4, 0, 2 * Math.PI);
+        imageCtx.fill();
+        imageCtx.closePath();
+      }
     });
+
+    let returnPromise = Promise.all(promises).then((drawings) => {
+      drawings.forEach((draw) => {
+        let [x,y,w,h] = draw.fill;
+        imageCtx.fillStyle = draw.color.hex;
+        imageCtx.fillRect(x,y,w,h);
+      });
+      let returnImage = new Image(200,200);
+      returnImage.src = imageCanvas.toDataURL();
+      return returnImage;
+    });
+
+    return returnPromise;
 
   }
   // handle a guess
@@ -373,15 +395,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (guessedCorrectly) {
       // if they guessed correctly, congradulate them.
       let p = document.createElement('p');
-      let text = document.createTextNode('YAY!!! YOU GOT IT!!!!');
+      let text = document.createTextNode('YAY!!! YOU GOT IT!!!! Copy the image below and share with your friends!');
       p.appendChild(text);
       dialogDOM.appendChild(p);
-      let code = document.createElement('p');
-      code.style.whiteSpace = 'pre';
-      code.style.fontFamily = 'monospace';
-      let summary = document.createTextNode(renderSummary(gameObject));
-      code.appendChild(summary);
-      dialogDOM.appendChild(code);
+      renderGameObjectAsImage(gameObject, img, canvas).then((img) => {
+        dialogDOM.appendChild(img);
+      });
     } else if (!event.historical) {
       // if it's a new guess and not a "historical" one
       // render a message to the user
@@ -404,6 +423,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   var img = new Image();
+  //img.crossOrigin = "anonymous";
   img.addEventListener('load', function () {
     const numRects = getNumRects()
     const oldState = localStorage.getItem(fileName);
