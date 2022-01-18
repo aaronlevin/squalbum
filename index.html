@@ -1,6 +1,7 @@
 <!Doctype html>
 <html lang="en">
   <head>
+    <script src="lz-string.min.js" defer></script>
     <script src="squalbum.js" defer></script>
   </head>
   <body>
@@ -16,6 +17,31 @@
         <li>if you want to play again, click <strong>clear state</strong> and hit refresh</li>
         <li><strong>comming soon</strong>: you will be able to create your own squalbum and share with friends.</li>
       </ul>
+    </section>
+    <section>
+
+      <menu>
+        <button id="create-image-modal-btn">Create your own!</button>
+      </menu>
+
+      <dialog id="create-dialog">
+        <h2>Create your own game!!</h2>
+        <p>Simply paste an image URL below to generate a link for a unique game using your image!</p>
+        <form method="dialog">
+          <label for="create-image-url">image URL:</label>
+          <input id="create-image-url" name="create-image-url" type="url" />
+          <br />
+          <label for="create-image-title">album title:</label>
+          <input id="create-image-title" name="create-image-title" type="text" />
+          <br />
+          <input id="generate-game-url" type="button" value="Generate URL!" />
+        </form>
+        <hr />
+        <div id="generated-img-url"></div>
+        <hr />
+        <div id="create-dialog-img"></div>
+      </dialog>
+
     </section>
     <section>
       <input id="difficulty" type="range" min="1" max="16" name="difficulty" value="8" />

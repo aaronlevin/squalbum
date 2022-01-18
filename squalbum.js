@@ -2,6 +2,8 @@
 
 TODO:
 * key state by image hash
+* don't render image in modal when not valid url
+* difficulty level is not interacting with completed game state well. to trigger: complete the game then change difficulty.
 
 */
 
@@ -30,8 +32,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
-  const albumIndex = urlParams.get('album') || 2;
-  const todaysAlbum = albums[albumIndex];
+
+  var todaysAlbum;
+
+  const gameFromUrl = urlParams.get('game');
+  if(gameFromUrl == null) {
+    const albumIndex = urlParams.get('album') || 2;
+    todaysAlbum = albums[albumIndex];
+  } else {
+    const decoded = decodeGameUrl(gameFromUrl);
+    imageUrl = decoded.url;
+    todaysAlbum = {
+      image: decoded.url,
+      title: decoded.title
+    };
+  }
+
 
   const difficultyDOM = document.getElementById('difficulty');
   var numRects = difficultyDOM.value;
@@ -42,7 +58,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // into an integer (milliseconds since epoch)
   const today = Math.floor(new Date(now.getFullYear(), now.getMonth(), now.getDate()));
 
-  // admin functions /////////////////////
+  /////////// admin functions /////////////////////
   const adminMode = urlParams.get('admin') || false;
 
   if(adminMode) {
@@ -55,7 +71,93 @@ document.addEventListener('DOMContentLoaded', (event) => {
     adminSection.appendChild(btn);
 
   }
-  ////// /admin ////////////
+  /////////////// /admin ////////////
+
+  /////////////// image URL functions  ////////////
+  // return a three character integer
+  function intToString(integer) {
+    return ("000" + integer).slice(-3);
+  }
+  // we are encoding an entire game into a url.
+  // it has the following structure:
+  // * base64(gzip([4-char title length][title][image url]))
+  function encodeGameUrl(title, url) {
+    return encodeURIComponent(
+      LZString.compressToBase64(
+        intToString(title.length) +
+        title +
+        url
+      )
+    );
+  }
+  function decodeGameUrl(encodedUrl) {
+    const decoded = decodeURIComponent(LZString.decompressFromBase64(encodedUrl));
+    const length = parseInt(decoded.substring(0,3));
+    const title = decoded.substring(3,3+length);
+    const imageUrl = decoded.substring(3+length);
+    return {
+      title: title,
+      url: imageUrl
+    };
+  }
+  function createLink(encodedGame) {
+    const link =
+      "https://aaronlevin.github.io/squalbum/?" +
+      `game=${encodedGame}`;
+    return link;
+  }
+  /////////////// /image URL functions /////////////
+
+  /////////////// create modal  /////////////
+  const createImageBtn = document.getElementById('create-image-modal-btn');
+  createImageBtn.addEventListener('click', (event) => {
+    const modal = document.getElementById('create-dialog');
+    modal.showModal();
+  });
+
+  const createImgInput = document.getElementById('create-image-url');
+  createImgInput.addEventListener('input', (event) => {
+    // when the input changes, remove all contents
+    // in the create-dialog-div and then insert
+    // an image there
+    const div = document.getElementById('create-dialog-img');
+    div.innerHTML = '';
+    const imageUrl = event.target.value;
+    var img = new Image();
+    img.src = imageUrl;
+    div.appendChild(img);
+  });
+
+  const generateGameUrl = document.getElementById('generate-game-url');
+  generateGameUrl.addEventListener('click', (event) => {
+    const div = document.getElementById('generated-img-url');
+    // clear contents
+    div.innerHTML = '';
+
+    const imageUrl = document.getElementById('create-image-url').value;
+    const title = document.getElementById('create-image-title').value;
+    const encodedGame = encodeGameUrl(title, imageUrl);
+    const urlInput = document.createElement('input');
+    urlInput.type = 'text';
+    urlInput.value = createLink(encodedGame);
+    const copyBtn = document.createElement('button');
+    const copyBtnText = document.createTextNode('copy');
+    copyBtn.addEventListener('click', () => {
+      urlInput.select();
+      document.execCommand("copy");
+    });
+    copyBtn.appendChild(copyBtnText);
+    const p = document.createElement('p');
+    p.innerHTML = 'copy the URL to play a game with your image!';
+    div.appendChild(p);
+    div.appendChild(urlInput);
+    div.appendChild(copyBtn);
+    const hr = document.createElement('hr');
+    div.appendChild(hr);
+    return false;
+  }, false);
+
+  /////////////// /create modal /////////////
 
   // fetch existing gameobject from local storage
   // if it exists. Also mark all historical guess
@@ -313,6 +415,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     })
 
   }, false);
+
+
   img.src = todaysAlbum.image;
 
 
