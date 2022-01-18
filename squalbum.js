@@ -8,6 +8,8 @@ TODO:
 */
 
 document.addEventListener('DOMContentLoaded', (event) => {
+  const fac = new FastAverageColor();
+
   const albums = [
     {
       artist: "Mr. Fingers",
@@ -327,6 +329,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     });
     return buffer;
+  }
+  function renderGameObjectAsImage(gameObject, image, canvas) {
+    const imageCanvas = document.createElement('canvas');
+    imageCanvas.width = 400;
+    imageCanvas.height = 400;
+
+    const length = Math.ceil(400/gameObject.numRects);
+
+    gameObject.rectangles.forEach((rect) => {
+      const canvas = document.createElement('canvas');
+      const width = gameObject.image.width;
+      const height = gameObject.image.height;
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      let sx = rect.image.x;
+      let sy = rect.image.y;
+      ctx.drawImage(image, sx, sy, width, height, 0, 0, width, height);
+
+      let image = new Image();
+      image.src = canvas.toDataURL();
+
+      const color = fac.getColor(image);
+    });
+
   }
   // handle a guess
   function handleGuessEvent(gameObject, event, canvas) {
