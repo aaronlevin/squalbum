@@ -1,22 +1,37 @@
+/**
+
+TODO:
+* key state by image hash
+
+*/
+
 document.addEventListener('DOMContentLoaded', (event) => {
   const albums = [
     {
       artist: "Mr. Fingers",
       title: "Ammnesia",
-      date: new Date(2022,0,17),
+      date: new Date(2022,0,19),
       image: "amnesia.jpg",
     },
     {
       artist: "John Martyn",
       title: "Solid Air",
-      date: new Date(2022,0,18),
+      date: new Date(2022,0,20),
       image: "solidair.jpg",
     },
+    {
+      artist: "Simon & Garfunkel",
+      title: "Bookends",
+      date: new Date(2022,0,21),
+      image: "bookends.jpg",
+    }
   ];
+  const urlParams = new URLSearchParams(window.location.search);
 
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
-  const todaysAlbum = albums[0];
+  const albumIndex = urlParams.get('album') || 2;
+  const todaysAlbum = albums[albumIndex];
 
   const difficultyDOM = document.getElementById('difficulty');
   var numRects = difficultyDOM.value;
@@ -27,10 +42,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // into an integer (milliseconds since epoch)
   const today = Math.floor(new Date(now.getFullYear(), now.getMonth(), now.getDate()));
 
-
-
   // admin functions /////////////////////
-  const urlParams = new URLSearchParams(window.location.search);
   const adminMode = urlParams.get('admin') || false;
 
   if(adminMode) {
