@@ -12,19 +12,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
     {
       artist: "Mr. Fingers",
       title: "Ammnesia",
-      date: new Date(2022,0,19),
+      date: new Date(2022, 0, 19),
       image: "amnesia.jpg",
     },
     {
       artist: "John Martyn",
       title: "Solid Air",
-      date: new Date(2022,0,20),
+      date: new Date(2022, 0, 20),
       image: "solidair.jpg",
     },
     {
       artist: "Simon & Garfunkel",
       title: "Bookends",
-      date: new Date(2022,0,21),
+      date: new Date(2022, 0, 21),
       image: "bookends.jpg",
     }
   ];
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   var todaysAlbum;
 
   const gameFromUrl = urlParams.get('game');
-  if(gameFromUrl == null) {
+  if (gameFromUrl == null) {
     const albumIndex = urlParams.get('album') || 2;
     todaysAlbum = albums[albumIndex];
   } else {
@@ -49,9 +49,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
 
-  const difficultyDOM = document.getElementById('difficulty');
-  var numRects = difficultyDOM.value;
-
   const now = new Date();
   // day beginning at 00:00
   // we use Math.floor to convert the date
@@ -61,7 +58,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   /////////// admin functions /////////////////////
   const adminMode = urlParams.get('admin') || false;
 
-  if(adminMode) {
+  if (adminMode) {
     let adminSection = document.getElementById('admin');
     let btn = document.createElement('button');
     btn.innerHTML = 'clear state';
@@ -92,9 +89,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
   function decodeGameUrl(encodedUrl) {
     const decoded = decodeURIComponent(LZString.decompressFromBase64(encodedUrl));
-    const length = parseInt(decoded.substring(0,3));
-    const title = decoded.substring(3,3+length);
-    const imageUrl = decoded.substring(3+length);
+    const length = parseInt(decoded.substring(0, 3));
+    const title = decoded.substring(3, 3 + length);
+    const imageUrl = decoded.substring(3 + length);
     return {
       title: title,
       url: imageUrl
@@ -159,23 +156,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   /////////////// /create modal /////////////
 
+  function getNumRects() {
+    const difficultyDOM = document.getElementById('difficulty');
+    return difficultyDOM.value;
+  }
+  ////// /admin ////////////
+
   // fetch existing gameobject from local storage
   // if it exists. Also mark all historical guess
   // as "historical"
-  var events = localStorage.getItem(today.toString());
-  if(events === null) {
-    events = []
-  } else {
-    events = JSON.parse(events);
-    events.forEach((event) => {
-      if(event.type === 'guess') {
-        event.historical = true;
-      }
-    });
-  }
+  const fileName = `squalbum-${today.toString()}`
 
-  function persistEvents(events) {
-    localStorage.setItem(today.toString(), JSON.stringify(events));
+  function persistEvents(gameObject) {
+    localStorage.setItem(fileName, JSON.stringify(gameObject));
   }
 
 
@@ -194,8 +187,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     var rectangles = new Array();
 
-    for (let iy=0; iy<numRects; iy++) {
-      for(let ix=0; ix<numRects; ix++) {
+    for (let iy = 0; iy < numRects; iy++) {
+      for (let ix = 0; ix < numRects; ix++) {
         let sx = ix * imageTileWidth;
         let sy = iy * imageTileHeight;
         let dx = ix * canvasTileWidth;
@@ -210,7 +203,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             x: dx,
             y: dy,
           },
-          clicked: false
+          x: ix,
+          y: iy,
+          guessed: false,
         }
         rectangles.push(rect);
       }
@@ -243,10 +238,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let width = obj.tile.width;
     let height = obj.tile.height;
     obj.rectangles.forEach((rect) => {
-      if(rect.clicked) {
-        // don't draw
-      } else {
-        ctx.fillRect(rect.tile.x, rect.tile.y, width-0.25, height-0.25);
+      if (!rect.guessed) {
+        ctx.fillRect(rect.tile.x, rect.tile.y, width - 0.25, height - 0.25);
       }
     });
   }
@@ -261,26 +254,48 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var rect = canvas.getBoundingClientRect();
     return {
       x: eventX - rect.left,
-      y: eventY - rect.top
+      y: eventY - rect.top,
+      height: rect.height,
+      width: rect.width,
     };
   }
 
-  function findIntersectingRectangle(obj, clickX, clickY) {
-    var returnRect;
-    // do the dumb brute force thing.
-    obj.rectangles.forEach((rect) => {
-      if(
-        clickX >= rect.tile.x &&
-        clickX < rect.tile.x + obj.tile.width &&
-        clickY >= rect.tile.y &&
-        clickY < rect.tile.y + obj.tile.height
-      ) {
-        returnRect = rect;
-      }
-    });
+  function checkOverlap(rectA, rectB) {
+    const { left: leftA, right: rightA, top: topA, bottom: bottomA } = rectA
+    const { left: leftB, right: rightB, top: topB, bottom: bottomB } = rectB
+    const overlaps = leftA < rightB && rightA > leftB && topA < bottomB && bottomA > topB
+    return overlaps
+  }
 
-    return returnRect;
+  function getBounds(x, y, resolution) {
+    return {
+      left: x / resolution,
+      right: (x + 1) / resolution,
+      top: y / resolution,
+      bottom: (y + 1) / resolution,
+    }
+  }
 
+  function rescaleGuesses(oldGame, newGame) {
+    const guessedRectangles = oldGame.rectangles.filter(rect => rect.guessed)
+    newGame.rectangles.forEach(rectangle => {
+      const bounds = getBounds(rectangle.x, rectangle.y, newGame.numRects)
+      const overlap = guessedRectangles.find(oldRect => {
+        const oldBounds = getBounds(oldRect.x, oldRect.y, oldGame.numRects)
+        return checkOverlap(bounds, oldBounds)
+      })
+      if (overlap) { rectangle.guessed = true }
+    })
+    return newGame
+  }
+
+  function updateGuesses(obj, { x, y, width, height }) {
+    const numRects = getNumRects()
+    const pctX = x / width
+    const pctY = y / height
+    const currentX = Math.floor(numRects * pctX)
+    const currentY = Math.floor(numRects * pctY)
+    obj.rectangles[currentX + (currentY * numRects)].guessed = true
   }
 
   // * queue of events.
@@ -288,9 +303,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // * gameState is used for rendering
   // * queue of events are persisted
   function updateGameState(gameObject, event, canvas) {
-    if(event.type === 'click') {
+    if (event.type === 'click') {
       handleClickEvent(gameObject, event, canvas);
-    } else if(event.type === 'guess') {
+    } else if (event.type === 'guess') {
       handleGuessEvent(gameObject, event, canvas);
     }
   }
@@ -298,12 +313,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // that was clicked
   function handleClickEvent(gameObject, event, canvas) {
     let mouseCoords = getMousePosition(canvas, event.x, event.y);
-    let intersectingRect = findIntersectingRectangle(gameObject, mouseCoords.x, mouseCoords.y);
-    if(intersectingRect == undefined) {
-      // do nothing
-    } else {
-      intersectingRect.clicked = true;
-    }
+    updateGuesses(gameObject, mouseCoords);
   }
 
   // utility function to clean strings for
@@ -314,13 +324,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // render a summary string for a 
   // correct guess
   function renderSummary(gameObject) {
-    let numRects = gameObject.numRects;
+    const numRects = getNumRects()
     let buffer = "";
     gameObject.rectangles.forEach((rect, index) => {
-      if(index % numRects == 0 && index != 0) {
+      if (index % numRects == 0 && index != 0) {
         buffer += "\n";
       }
-      if(rect.clicked) {
+      if (rect.clicked) {
         buffer += " * ";
       } else {
         buffer += "[-]";
@@ -333,7 +343,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let guess = event.guess;
     let guessedCorrectly = cleanString(guess) === cleanString(todaysAlbum.title);
     let dialogDOM = document.getElementById('dialog');
-    if(guessedCorrectly) {
+    if (guessedCorrectly) {
       // if they guessed correctly, congradulate them.
       let p = document.createElement('p');
       let text = document.createTextNode('YAY!!! YOU GOT IT!!!!');
@@ -345,14 +355,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
       let summary = document.createTextNode(renderSummary(gameObject));
       code.appendChild(summary);
       dialogDOM.appendChild(code);
-    } else if(!event.historical) {
+    } else if (!event.historical) {
       // if it's a new guess and not a "historical" one
       // render a message to the user
       let p = document.createElement('p');
       let text = document.createTextNode("Sorry, you guessed wrong :(");
       p.appendChild(text);
       dialogDOM.appendChild(p);
-      setTimeout(() => {dialogDOM.removeChild(p);}, 3000);
+      setTimeout(() => { dialogDOM.removeChild(p); }, 3000);
     } else {
       // this is a historical guess, do nothing.
       // we keep these around for statistics or
@@ -360,21 +370,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  function generalEventHandler(gameObject, event, events, canvas, ctx) {
-    events.push(event);
+  function generalEventHandler(gameObject, event, canvas, ctx) {
     updateGameState(gameObject, event, canvas);
-    persistEvents(events);
     draw(gameObject, canvas, ctx);
+    persistEvents(gameObject)
   }
 
   var img = new Image();
-  img.addEventListener('load', function() {
-    var gameObject = createGameObject(img, canvas, numRects);
-
-    // update the game state with the persisted events
-    events.forEach((event) => {
-      updateGameState(gameObject, event, canvas);
-    });
+  img.addEventListener('load', function () {
+    const numRects = getNumRects()
+    const oldState = localStorage.getItem(fileName);
+    let gameObject
+    if (oldState) {
+      const parsedState = JSON.parse(oldState)
+      document.getElementById('difficulty').value = parsedState.numRects
+      gameObject = parsedState
+    } else {
+      gameObject = createGameObject(img, canvas, numRects);
+    }
 
     // finally, draw initial image.
     draw(gameObject, canvas, ctx);
@@ -386,16 +399,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         x: domEvent.clientX,
         y: domEvent.clientY,
       };
-      generalEventHandler(gameObject, storedEvent, events, canvas, ctx);
+      generalEventHandler(gameObject, storedEvent, canvas, ctx);
     });
 
     // add difficult listener
+    const difficultyDOM = document.getElementById('difficulty');
     difficultyDOM.addEventListener('input', (event) => {
-      numRects = event.target.value
-      gameObject = createGameObject(img, canvas, numRects);
-      events.forEach((event) => {
-        updateGameState(gameObject, event, canvas);
-      });
+      const numRects = event.target.value
+      const newGameObject = createGameObject(img, canvas, numRects);
+      gameObject = rescaleGuesses(gameObject, newGameObject)
+      // events.forEach((event) => {
+      //   updateGameState(gameObject, event, canvas);
+      // });
       draw(gameObject, canvas, ctx);
     });
 
@@ -411,7 +426,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // don't want to replay into the UI
         historical: false
       };
-      generalEventHandler(gameObject, guessEvent, events, canvas, ctx);
+      generalEventHandler(gameObject, guessEvent, canvas, ctx);
     })
 
   }, false);
