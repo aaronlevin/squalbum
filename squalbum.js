@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // fetch existing gameobject from local storage
   // if it exists. Also mark all historical guess
   // as "historical"
-  const fileName = `squalbum-${today.toString()}`
+  const fileName = `squalbum-${gameFromUrl || today.toString()}`
 
   function persistEvents(gameObject) {
     localStorage.setItem(fileName, JSON.stringify(gameObject));
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           },
           x: ix,
           y: iy,
-          guessed: false,
+          clicked: false,
         }
         rectangles.push(rect);
       }
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let width = obj.tile.width;
     let height = obj.tile.height;
     obj.rectangles.forEach((rect) => {
-      if (!rect.guessed) {
+      if (!rect.clicked) {
         ctx.fillRect(rect.tile.x, rect.tile.y, width - 0.25, height - 0.25);
       }
     });
@@ -277,14 +277,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function rescaleGuesses(oldGame, newGame) {
-    const guessedRectangles = oldGame.rectangles.filter(rect => rect.guessed)
+    const guessedRectangles = oldGame.rectangles.filter(rect => rect.clicked)
     newGame.rectangles.forEach(rectangle => {
       const bounds = getBounds(rectangle.x, rectangle.y, newGame.numRects)
       const overlap = guessedRectangles.find(oldRect => {
         const oldBounds = getBounds(oldRect.x, oldRect.y, oldGame.numRects)
         return checkOverlap(bounds, oldBounds)
       })
-      if (overlap) { rectangle.guessed = true }
+      if (overlap) { rectangle.clicked = true }
     })
     return newGame
   }
@@ -295,7 +295,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const pctY = y / height
     const currentX = Math.floor(numRects * pctX)
     const currentY = Math.floor(numRects * pctY)
-    obj.rectangles[currentX + (currentY * numRects)].guessed = true
+    obj.rectangles[currentX + (currentY * numRects)].clicked = true
   }
 
   // * queue of events.
