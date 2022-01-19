@@ -44,7 +44,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     todaysAlbum = albums[albumIndex];
   } else {
     const decoded = decodeGameUrl(gameFromUrl);
-    imageUrl = decoded.url;
+    // when we decode a Game Url, it's an image link form discogs,
+    // and we need to transform it into something that will be
+    // proxied by the server. We've configured Netlify to proxy
+    // anything from /scogs/:splat to https://i.discogs.com
+    const url = new URL(decoded.url);
+    imageUrl = `/scogs${url.pathname}`;
     todaysAlbum = {
       image: decoded.url,
       title: decoded.title
