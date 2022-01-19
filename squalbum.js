@@ -356,6 +356,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         tmpCtx.drawImage(albumImage, sx, sy, width, height, 0, 0, width, height);
 
         let image = new Image(width, height);
+        image.crossOrigin = "anonymous";
         image.src = tmpCanvas.toDataURL();
 
         promises.push(fac.getColorAsync(image).then(color => {
