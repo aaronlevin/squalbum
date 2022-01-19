@@ -1,3 +1,7 @@
 [[redirects]]
   /scogs/*  https://i.discogs.com/:splat  200
-  headers = {Access-Control-Allow-Origin = "*"}
+
+[[headers]]
+  for = "/scogs/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
