@@ -2,6 +2,6 @@
   /scogs/*  https://i.discogs.com/:splat  200
 
 [[headers]]
-  for = "/scogs/*"
+  for = "/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
