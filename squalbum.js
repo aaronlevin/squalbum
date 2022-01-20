@@ -6,6 +6,9 @@ TODO:
 * difficulty level is not interacting with completed game state well. to trigger: complete the game then change difficulty.
 * rendered image is large. shrink rendered image
 
+* top bar that says dubble
+* settings bar
+
 */
 
 document.addEventListener('DOMContentLoaded', (event) => {
