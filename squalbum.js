@@ -11,6 +11,8 @@ TODO:
 document.addEventListener('DOMContentLoaded', (event) => {
   const fac = new FastAverageColor();
 
+  const difficulties = [1,2,4,6,8,12,24];
+
   const albums = [
     {
       artist: "Mr. Fingers",
@@ -161,6 +163,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   function getNumRects() {
     const difficultyDOM = document.getElementById('difficulty');
+    const numRects = difficulties[parseInt(difficultyDOM.value) - 1];
     return difficultyDOM.value;
   }
   ////// /admin ////////////
