@@ -3,32 +3,35 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
   <script src="fast-average-color.min.js" defer></script>
   <script src="lz-string.min.js" defer></script>
   <script src="squalbum.js" defer></script>
 </head>
 
 <body>
-  <h1>dubble</h1>
-  <section>
-    <p>Welcome to <strong>dubble</strong>! dubble is like <a href="https://www.powerlanguage.co.uk/wordle/">wordle</a>
-      except with images (in this case: album covers).</p>
-    <h2>how to play</h2>
-    <p>Your goal is to guess the album title! Click on squares to reveal portions of the album cover beneath. Some
-      notes:</p>
-    <ul>
-      <li>guess only the album title and not the artist.</li>
-      <li>ignore the "difficulty" slider (I mean, feel free to play with it but its under development and can be used to
-        cheat)</li>
-      <li>if you want to play again, click <strong>clear state</strong> and hit refresh</li>
-      <li><strong>comming soon</strong>: you will be able to create your own dubble and share with friends.</li>
-    </ul>
-  </section>
-  <section>
-
-    <menu>
+  <div id="game">
+    <header>
+      <div class="menu">(menu)</div>
+      <div class="title"><h1>DUBBLE</h1></div>
+      <div class="menu">(settings)</div>
+    </header>
+    <div class="welcome">
+      <p>welcome to <strong>dubble</strong>! dubble is <a href="https://www.powerlanguage.co.uk/wordle/">wordle</a> for album art!</p>
+    </div>
+    <menu class="create-your-own">
       <button id="create-image-modal-btn">Create your own!</button>
     </menu>
+    <div class="guess">
+      <label for="name">Album title:</label>
+      <input type="text" id="album-guess" name="album-guess" minlength="1" size="40">
+      <input id="album-guess-btn" type="button" value="guess!">
+    </div>
+    <div id="dialog"></section>
+    <div>
+    <canvas id="canvas" width="600" height="600"></canvas>
+  </div>
+  <section>
 
     <dialog id="create-dialog">
       <h2>Create your own game!!</h2>
@@ -60,16 +63,20 @@
   <section>
     <hr />
   </section>
-  <section>
-    <label for="name">Album title:</label>
-    <input type="text" id="album-guess" name="album-guess" minlength="1" size="40">
-    <input id="album-guess-btn" type="button" value="guess!">
-  </section>
-  <section id="dialog"></section>
-  <section>
     <hr />
   </section>
-  <canvas id="canvas" width="600" height="600"></canvas>
+  <section>
+    <h2>how to play</h2>
+    <p>Your goal is to guess the album title! Click on squares to reveal portions of the album cover beneath. Some
+      notes:</p>
+    <ul>
+      <li>guess only the album title and not the artist.</li>
+      <li>ignore the "difficulty" slider (I mean, feel free to play with it but its under development and can be used to
+        cheat)</li>
+      <li>if you want to play again, click <strong>clear state</strong> and hit refresh</li>
+      <li><strong>comming soon</strong>: you will be able to create your own dubble and share with friends.</li>
+    </ul>
+  </section>
   <footer>created by <a href="https://aaronlevin.ca">aaron levin</a> and erik hinton</footer>
 </body>
 
