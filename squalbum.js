@@ -14,7 +14,7 @@ TODO:
 document.addEventListener('DOMContentLoaded', (event) => {
   const fac = new FastAverageColor();
 
-  const difficulties = [1,2,4,6,8,12,24];
+  const difficulties = [1, 2, 4, 6, 8, 12, 24];
 
   const albums = [
     {
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function getNumRects() {
     const difficultyDOM = document.getElementById('difficulty');
     const numRects = difficulties[parseInt(difficultyDOM.value) - 1];
-    return difficultyDOM.value;
+    return numRects
   }
   ////// /admin ////////////
 
@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let promises = [];
 
     gameObject.rectangles.forEach((rect) => {
-      if(rect.clicked) {
+      if (rect.clicked) {
         const tmpCanvas = document.createElement('canvas');
         const width = gameObject.image.width;
         const height = gameObject.image.height;
@@ -383,11 +383,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     let returnPromise = Promise.all(promises).then((drawings) => {
       drawings.forEach((draw) => {
-        let [x,y,w,h] = draw.fill;
+        let [x, y, w, h] = draw.fill;
         imageCtx.fillStyle = draw.color.hex;
-        imageCtx.fillRect(x,y,w,h);
+        imageCtx.fillRect(x, y, w, h);
       });
-      let returnImage = new Image(200,200);
+      let returnImage = new Image(200, 200);
       returnImage.crossOrigin = "anonymous";
       returnImage.src = imageCanvas.toDataURL();
       return returnImage;
@@ -439,7 +439,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let gameObject
     if (oldState) {
       const parsedState = JSON.parse(oldState)
-      document.getElementById('difficulty').value = parsedState.numRects
+      const difficultyIndex = difficulties.indexOf(parsedState.numRects) + 1
+      document.getElementById('difficulty').value = difficultyIndex
       gameObject = parsedState
     } else {
       gameObject = createGameObject(img, canvas, numRects);
@@ -461,7 +462,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // add difficult listener
     const difficultyDOM = document.getElementById('difficulty');
     difficultyDOM.addEventListener('input', (event) => {
-      const numRects = event.target.value
+      const numRects = difficulties[event.target.value - 1];
       const newGameObject = createGameObject(img, canvas, numRects);
       gameObject = rescaleGuesses(gameObject, newGameObject)
       // events.forEach((event) => {
