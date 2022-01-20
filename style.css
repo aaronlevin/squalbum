@@ -4,7 +4,13 @@
 }
 
 #game {
-  margin: 0 20vw;
+  margin: 0 2vw;
+}
+
+@media (min-width: 480px) {
+  #game {
+    margin: 0 20vw;
+  }
 }
 
 header {
