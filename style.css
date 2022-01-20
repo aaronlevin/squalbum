@@ -33,6 +33,8 @@ footer {
 .guess {
   display: flex;
   padding: 2vh 0;
+  align-items: center;
+  justify-content: center;
 }
 
 #canvas {
