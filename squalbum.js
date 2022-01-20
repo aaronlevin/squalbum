@@ -382,6 +382,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         imageCtx.fillRect(x,y,w,h);
       });
       let returnImage = new Image(200,200);
+      returnImage.crossOrigin = "anonymous";
       returnImage.src = imageCanvas.toDataURL();
       return returnImage;
     });
