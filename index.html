@@ -27,7 +27,7 @@
       <input type="text" id="album-guess" name="album-guess" minlength="1" size="40">
       <input id="album-guess-btn" type="button" value="guess!">
     </div>
-    <div id="dialog"></div>
+    <div id="dialog-failure"></div>
     <canvas id="canvas" width="600" height="600"></canvas>
   </div>
 
@@ -82,6 +82,19 @@
       <label for="difficulty">difficulty</label>
       <div id="admin">
       </div>
+    </div>
+  </div>
+
+  <div data-modal="success" id="success-click"></div>
+  <!-- modal: success -->
+  <div class="modal" id="success">
+    <div class="modal-bg modal-exit"></div>
+    <div class="modal-container">
+      <p>🐢🐢🐢 !!!YOU GOT IT!!! 🛹🛹🛹</p>
+      <p>copy the image and share your score with your friends!!</p>
+      <div id="dialog"></div>
+      <!--
+      -->
     </div>
   </div>
 

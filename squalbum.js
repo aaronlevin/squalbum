@@ -399,24 +399,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function handleGuessEvent(gameObject, event, canvas) {
     let guess = event.guess;
     let guessedCorrectly = cleanString(guess) === cleanString(todaysAlbum.title);
-    let dialogDOM = document.getElementById('dialog');
     if (guessedCorrectly) {
+      let successClickModal = document.getElementById('success-click');
+      successClickModal.dispatchEvent(new Event('click'));
+      let dialogDOM = document.getElementById('dialog');
       // if they guessed correctly, congradulate them.
-      let p = document.createElement('p');
-      let text = document.createTextNode('YAY!!! YOU GOT IT!!!! Copy the image below and share with your friends!');
-      p.appendChild(text);
-      dialogDOM.appendChild(p);
       renderGameObjectAsImage(gameObject, img, canvas).then((img) => {
         dialogDOM.appendChild(img);
       });
     } else if (!event.historical) {
+      navigator.vibrate(200);
       // if it's a new guess and not a "historical" one
       // render a message to the user
       let p = document.createElement('p');
       let text = document.createTextNode("Sorry, you guessed wrong :(");
+      let dialogDOMFailure = document.getElementById('dialog-failure');
       p.appendChild(text);
-      dialogDOM.appendChild(p);
-      setTimeout(() => { dialogDOM.removeChild(p); }, 3000);
+      dialogDOMFailure.appendChild(p);
+      setTimeout(() => { dialogDOMFailure.removeChild(p); }, 3000);
     } else {
       // this is a historical guess, do nothing.
       // we keep these around for statistics or
