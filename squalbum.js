@@ -1,13 +1,12 @@
 /**
 
 TODO:
-* key state by image hash
-* don't render image in modal when not valid url
-* difficulty level is not interacting with completed game state well. to trigger: complete the game then change difficulty.
-* rendered image is large. shrink rendered image
 
 * top bar that says dubble
 * settings bar
+* persist difficulty settings per image in state so they work after refresh.
+* persist completed game
+* don't render image in modal when not valid url
 
 */
 
