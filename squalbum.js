@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   var img = new Image();
-  //img.crossOrigin = "anonymous";
+  img.crossOrigin = "anonymous";
   img.addEventListener('load', function () {
     const numRects = getNumRects()
     const oldState = localStorage.getItem(fileName);
