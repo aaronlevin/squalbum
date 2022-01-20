@@ -19,7 +19,7 @@
     <div class="welcome">
       <p>welcome to <strong>dubble</strong>! dubble is <a href="https://www.powerlanguage.co.uk/wordle/">wordle</a> for album art!</p>
     </div>
-    <menu class="create-your-own">
+    <menu class="create-your-own" data-modal="create-your-own">
       <button id="create-image-modal-btn">Create your own!</button>
     </menu>
     <div class="guess">
@@ -30,13 +30,16 @@
     <div id="dialog"></div>
     <canvas id="canvas" width="600" height="600"></canvas>
   </div>
-  <section>
 
-    <dialog id="create-dialog">
+  <!-- modal: create your own -->
+  <div class="modal" id="create-your-own">
+    <div class="modal-bg modal-exit"></div>
+    <div class="modal-container">
+      <button class="modal-close modal-exit">X</button>
       <h2>Create your own game!!</h2>
       <p>Simply paste an image URL below to generate a link for a unique game using your image!</p>
       <p><strong>important</strong>: images from <code>discogs.com</code> will not work. We suggest using <a
-          href="https://imgur.com" target="_blank">imgur.com</a>.</p>
+                                                                                                              href="https://imgur.com" target="_blank">imgur.com</a>.</p>
       <form method="dialog">
         <label for="create-image-url">image URL:</label>
         <input id="create-image-url" name="create-image-url" type="url" />
@@ -50,8 +53,10 @@
       <div id="generated-img-url"></div>
       <hr />
       <div id="create-dialog-img"></div>
-    </dialog>
+    </div>
+  </div>
 
+  <!-- modal: how to play -->
   <div class="modal" id="how-to-play">
     <div class="modal-bg modal-exit"></div>
     <div class="modal-container">
@@ -68,7 +73,7 @@
     </div>
   </div>
 
-
+  <!-- modal: settings -->
   <div class="modal" id="settings">
     <div class="modal-bg modal-exit"></div>
     <div class="modal-container">
@@ -79,8 +84,6 @@
       </div>
     </div>
   </div>
-
-
 
   <hr />
   <footer>created by <a href="https://aaronlevin.ca">aaron levin</a>, erik hinton, and <a href="https://marieflanagan.com">marie flanagan</a></footer>
