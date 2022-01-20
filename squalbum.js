@@ -490,5 +490,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   img.src = todaysAlbum.image;
 
+  ///////// settings and menu stuff//////
+  const gameDOM = document.getElementById('game');
+  const modals = document.querySelectorAll("[data-modal]");
+
+  modals.forEach(function (trigger) {
+    trigger.addEventListener("click", function (event) {
+      event.preventDefault();
+      // blur game background.
+      gameDOM.classList.add('blur');
+
+      const modal = document.getElementById(trigger.dataset.modal);
+      modal.classList.add("open");
+      const exits = modal.querySelectorAll(".modal-exit");
+      exits.forEach(function (exit) {
+        exit.addEventListener("click", function (event) {
+          event.preventDefault();
+          // remove blur
+          gameDOM.classList.remove('blur');
+          modal.classList.remove("open");
+        });
+      });
+    });
+  });
 
 });

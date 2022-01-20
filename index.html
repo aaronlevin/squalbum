@@ -12,9 +12,9 @@
 <body>
   <div id="game">
     <header>
-      <div class="menu">(menu)</div>
+      <div class="menu" data-modal="how-to-play" id="menu">(how-to)</div>
       <div class="title"><h1>DUBBLE</h1></div>
-      <div class="menu">(settings)</div>
+      <div class="menu" data-modal="settings">(settings)</div>
     </header>
     <div class="welcome">
       <p>welcome to <strong>dubble</strong>! dubble is <a href="https://www.powerlanguage.co.uk/wordle/">wordle</a> for album art!</p>
@@ -27,8 +27,7 @@
       <input type="text" id="album-guess" name="album-guess" minlength="1" size="40">
       <input id="album-guess-btn" type="button" value="guess!">
     </div>
-    <div id="dialog"></section>
-    <div>
+    <div id="dialog"></div>
     <canvas id="canvas" width="600" height="600"></canvas>
   </div>
   <section>
@@ -53,30 +52,37 @@
       <div id="create-dialog-img"></div>
     </dialog>
 
-  </section>
-  <section>
-    <input id="difficulty" type="range" min="1" max="7" step="1" name="difficulty" value="4" />
-    <label for="difficulty">difficulty</label>
-  </section>
-  <section id="admin">
-  </section>
-  <section>
-    <hr />
-  </section>
-    <hr />
-  </section>
-  <section>
-    <h2>how to play</h2>
-    <p>Your goal is to guess the album title! Click on squares to reveal portions of the album cover beneath. Some
+  <div class="modal" id="how-to-play">
+    <div class="modal-bg modal-exit"></div>
+    <div class="modal-container">
+      <button class="modal-close modal-exit">X</button>
+      <h2>how to play</h2>
+      <p>Your goal is to guess the album title! Click on squares to reveal portions of the album cover beneath. Some
       notes:</p>
-    <ul>
-      <li>guess only the album title and not the artist.</li>
-      <li>ignore the "difficulty" slider (I mean, feel free to play with it but its under development and can be used to
-        cheat)</li>
-      <li>if you want to play again, click <strong>clear state</strong> and hit refresh</li>
-      <li><strong>comming soon</strong>: you will be able to create your own dubble and share with friends.</li>
-    </ul>
-  </section>
+      <ul>
+        <li>guess only the album title and not the artist.</li>
+        <li>ignore the "difficulty" slider (I mean, feel free to play with it but its under development and can be used to
+          cheat)</li>
+        <li>if you want to play again, click <strong>clear state</strong> and hit refresh</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="modal" id="settings">
+    <div class="modal-bg modal-exit"></div>
+    <div class="modal-container">
+      <button class="modal-close modal-exit">X</button>
+      <input id="difficulty" type="range" min="1" max="7" step="1" name="difficulty" value="4" />
+      <label for="difficulty">difficulty</label>
+      <div id="admin">
+      </div>
+    </div>
+  </div>
+
+
+
+  <hr />
   <footer>created by <a href="https://aaronlevin.ca">aaron levin</a> and erik hinton</footer>
 </body>
 
