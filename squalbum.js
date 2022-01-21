@@ -2,11 +2,10 @@
 
 TODO:
 
-* top bar that says dubble
-* settings bar
+* cancel timeouts when modal is closed
 * persist difficulty settings per image in state so they work after refresh.
 * persist completed game
-* don't render image in modal when not valid url
+* don't render image in modal when not valid image
 
 */
 
@@ -47,8 +46,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // day beginning at 00:00
   // we use Math.floor to convert the date
   // into an integer (milliseconds since epoch)
-  const today = Math.floor(new Date(now.getFullYear(), now.getMonth(), now.getDate()));
-
+  const todayDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const today = Math.floor(todayDate);
 
   const gameFromUrl = urlParams.get('game');
   if (gameFromUrl == null) {
@@ -452,6 +451,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       renderGameObjectAsImage(gameObject, img, canvas).then((img) => {
         dialogDOM.appendChild(img);
       });
+      updateTimeRemainingRecur();
     } else if (!event.historical) {
       // TODO(aaronlevin): this causes a failure on iOS.
       //navigator.vibrate(200);
@@ -584,5 +584,37 @@ document.addEventListener('DOMContentLoaded', (event) => {
   } else {
     successP.innerHTML = `uncvr.it - custom`;
   }
+
+  function timeRemaining(todayDate) {
+    const tmrDate = new Date(todayDate.getTime() + 60 * 60 * 24 * 1000);
+    // defensively reset to beginning of day.
+    const tomorrowDate = new Date(new Date(tmrDate.getFullYear(), tmrDate.getMonth(), tmrDate.getDate()));
+
+    const todayMs = todayDate.getTime();
+    const tomorrowMs = tomorrowDate.getTime();
+    const secondsDiff = Math.floor((tomorrowMs - todayMs) / 1000);
+    const hoursLeft = Math.floor(secondsDiff / 3600);
+    const minutesLeft = Math.floor((secondsDiff % 3600) / 60);
+    const secondsLeft = Math.floor( ((secondsDiff % 3600) % 60));
+
+    return {
+      hours: hoursLeft,
+      minutes: minutesLeft,
+      seconds: secondsLeft
+    };
+
+  }
+
+  const timeRemainingDiv = document.getElementById('time-remaining');
+  function updateTimeRemaining() {
+    const { hours, minutes, seconds } = timeRemaining(new Date());
+    const text = `next uncvr.it in: ${hours} : ${minutes} : ${seconds}`;
+    timeRemainingDiv.innerHTML = text;
+  }
+  function updateTimeRemainingRecur() {
+    updateTimeRemaining();
+    setTimeout(updateTimeRemainingRecur, 500);
+  }
+
 
 });
