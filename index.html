@@ -14,19 +14,24 @@
   <div id="game">
     <header>
       <div class="menu" data-modal="how-to-play" id="menu">(how-to)</div>
-      <div class="title"><h1>DUBBLE</h1></div>
+      <div class="title">
+        <h1>DUBBLE</h1>
+      </div>
       <div class="menu" data-modal="settings">(settings)</div>
     </header>
     <div class="welcome">
-      <p>welcome to <strong>dubble</strong>! dubble is <a href="https://www.powerlanguage.co.uk/wordle/">wordle</a> for album art!</p>
+      <p>welcome to <strong>dubble</strong>! dubble is <a href="https://www.powerlanguage.co.uk/wordle/">wordle</a> for
+        album art!</p>
     </div>
     <menu class="create-your-own" data-modal="create-your-own">
       <button id="create-image-modal-btn">Create your own!</button>
     </menu>
     <div class="guess">
-      <label for="name">Album title:</label>
-      <input type="text" id="album-guess" name="album-guess" minlength="1" size="40">
-      <input id="album-guess-btn" type="button" value="guess!">
+      <form onsubmit="return false">
+        <label for="name" class="sr-only">Album title:</label>
+        <input type="text" id="album-guess" name="album-guess" minlength="1" size="40" placeholder="album title">
+        <input type="submit" id="album-guess-btn" value="guess!">
+      </form>
     </div>
     <div id="dialog-failure"></div>
     <canvas id="canvas" width="600vw" height="600vh"></canvas>
@@ -40,7 +45,7 @@
       <h2>Create your own game!!</h2>
       <p>Simply paste an image URL below to generate a link for a unique game using your image!</p>
       <p><strong>important</strong>: images from <code>discogs.com</code> will not work. We suggest using <a
-                                                                                                              href="https://imgur.com" target="_blank">imgur.com</a>.</p>
+          href="https://imgur.com" target="_blank">imgur.com</a>.</p>
       <form method="dialog">
         <label for="create-image-url">image URL:</label>
         <input id="create-image-url" name="create-image-url" type="url" />
@@ -64,10 +69,11 @@
       <button class="modal-close modal-exit">X</button>
       <h2>how to play</h2>
       <p>Your goal is to guess the album title! Click on squares to reveal portions of the album cover beneath. Some
-      notes:</p>
+        notes:</p>
       <ul>
         <li>guess only the album title and not the artist.</li>
-        <li>ignore the "difficulty" slider (I mean, feel free to play with it but its under development and can be used to
+        <li>ignore the "difficulty" slider (I mean, feel free to play with it but its under development and can be used
+          to
           cheat)</li>
         <li>if you want to play again, click <strong>clear state</strong> and hit refresh</li>
       </ul>
@@ -100,7 +106,8 @@
   </div>
 
   <hr />
-  <footer>created by <a href="https://aaronlevin.ca">aaron levin</a>, erik hinton, and <a href="https://marieflanagan.com">marie flanagan</a></footer>
+  <footer>created by <a href="https://aaronlevin.ca">aaron levin</a>, erik hinton, and <a
+      href="https://marieflanagan.com">marie flanagan</a></footer>
 </body>
 
 </html>
