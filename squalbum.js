@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       title: "Ammnesia",
       date: new Date(2022, 0, 21),
       image: "images/2022-01-21.jpg",
+      trivia: "Ammnesia was the first album released by <a href=\"https://en.wikipedia.org/wiki/Larry_Heard\">Larry Heard</a> as Mr. Fingers. The song <a href=\"https://www.youtube.com/watch?v=lwObuf_hgfE\"><i>The Juice</i></a> was recently popularized on TikTok."
     },
     {
       artist: "John Martyn",
@@ -429,6 +430,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (guessedCorrectly) {
       let successClickModal = document.getElementById('success-click');
       successClickModal.dispatchEvent(new Event('click'));
+
+      if('trivia' in todaysAlbum) {
+        let p = document.createElement('p');
+        p.innerHTML = todaysAlbum.trivia
+        document.getElementById('modal-container-win').appendChild(p);
+      }
+
       let dialogDOM = document.getElementById('dialog');
       // if they guessed correctly, congradulate them.
       renderGameObjectAsImage(gameObject, img, canvas).then((img) => {
