@@ -42,16 +42,16 @@
     <div class="modal-bg modal-exit"></div>
     <div class="modal-container">
       <button class="modal-close modal-exit">X</button>
-      <h2>Create your own game!!</h2>
-      <p>Simply paste an image URL below to generate a link for a unique game using your image!</p>
-      <p><strong>important</strong>: images from <code>discogs.com</code> will not work. We suggest using <a
-          href="https://imgur.com" target="_blank">imgur.com</a>.</p>
-      <form method="dialog">
-        <label for="create-image-url">image URL:</label>
-        <input id="create-image-url" name="create-image-url" type="url" />
+      <h2>create your own game!!</h2>
+      <p>simply paste an <a
+        href="https://imgur.com" target="_blank">imgur</a> URL below to make a game with your own image!</p>
+      
+      <form id="generate-image-form" method="dialog">
+        <label for="create-image-url" class="sr-only">imgur URL:</label>
+        <input id="create-image-url" name="create-image-url" type="url" placeholder="image URL"/>
         <br />
-        <label for="create-image-title">album title:</label>
-        <input id="create-image-title" name="create-image-title" type="text" />
+        <label for="create-image-title" class="sr-only">album title:</label>
+        <input id="create-image-title" name="create-image-title" type="text" placeholder="album title"/>
         <br />
         <input id="generate-game-url" type="button" value="Generate URL!" />
       </form>
@@ -85,8 +85,9 @@
     <div class="modal-bg modal-exit"></div>
     <div class="modal-container">
       <button class="modal-close modal-exit">X</button>
-      <input id="difficulty" type="range" min="1" max="7" step="1" name="difficulty" value="4" />
+      <h2>settings</h2>
       <label for="difficulty">difficulty</label>
+      <input id="difficulty" type="range" min="1" max="7" step="1" name="difficulty" value="4" />
       <div id="admin">
       </div>
     </div>
