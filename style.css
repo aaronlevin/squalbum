@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+hr {
+  margin: 20px 0;
+}
+
 #game {
   box-sizing: border-box;
   margin: 2vw 2vw;
@@ -53,14 +57,14 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 10px 8px;
-  margin: 50px 0 0 0;
+  margin: 50px 10px 0 10px;
 }
 
 #dialog-failure{
   text-align: center;
 }
 
-form {
+form, copy-custom-url-form {
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -77,6 +81,44 @@ input {
   width: 100%;
   min-width: 30px;
   padding: 3px;
+  margin: .5rem 0;
+}
+
+#album-guess, #generated-link {
+  width: 80%;
+  min-width: 30px;
+  padding: 3px;
+}
+
+#generated-img-url{
+  display: flex;
+  /* flex-flow: row wrap; */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* #copy-custom-url-form {
+  width: 100%;
+} */
+
+#copy-custom-url {
+  font-family: serif;
+}
+
+#copy-button{
+  width: 16%;
+}
+
+#generated-image{
+  box-sizing: border-box;
+  display: flex;
+  padding: 2vh 2vh;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 .sr-only {
@@ -89,7 +131,7 @@ input {
   }
 
 #album-guess-btn {
-  width: 23%;
+  width: 18%;
   max-width: 90px;
   min-width: 20px;
 }
@@ -122,8 +164,9 @@ input {
   top: 0;
   left: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start;
+  margin-top: 15vh;
 }
 
 .modal.open {
