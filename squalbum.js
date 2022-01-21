@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let btn = document.getElementById('clear-state');
   btn.addEventListener('click', (event) => {
     localStorage.clear();
+    location.reload();
   });
 
   /////////////// /admin ////////////
