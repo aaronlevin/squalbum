@@ -72,18 +72,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   /////////// admin functions /////////////////////
-  const adminMode = urlParams.get('admin') || false;
+  let btn = document.getElementById('clear-state');
+  btn.addEventListener('click', (event) => {
+    localStorage.clear();
+  });
 
-  if (adminMode) {
-    let adminSection = document.getElementById('admin');
-    let btn = document.createElement('button');
-    btn.innerHTML = 'clear state';
-    btn.addEventListener('click', (event) => {
-      localStorage.clear();
-    });
-    adminSection.appendChild(btn);
-
-  }
   /////////////// /admin ////////////
 
   /////////////// image URL functions  ////////////
