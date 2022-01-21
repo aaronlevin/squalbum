@@ -131,6 +131,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     div.innerHTML = '';
     const imageUrl = event.target.value;
     var img = new Image(200,200);
+    img.setAttribute('id', 'generated-image');
     img.src = imageUrl;
     div.appendChild(img);
   });
@@ -145,9 +146,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const title = document.getElementById('create-image-title').value;
     const encodedGame = encodeGameUrl(title, imageUrl);
     const urlInput = document.createElement('input');
+    urlInput.setAttribute('id', 'generated-link');
     urlInput.type = 'text';
     urlInput.value = createLink(encodedGame);
     const copyBtn = document.createElement('button');
+    copyBtn.setAttribute('id', 'copy-button');
     const copyBtnText = document.createTextNode('copy');
     copyBtn.addEventListener('click', () => {
       urlInput.select();
@@ -155,6 +158,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
     copyBtn.appendChild(copyBtnText);
     const p = document.createElement('p');
+    p.setAttribute('id', 'copy-custom-url');
     p.innerHTML = 'copy the URL to play a game with your image!';
     div.appendChild(p);
     div.appendChild(urlInput);
