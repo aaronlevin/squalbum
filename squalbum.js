@@ -580,9 +580,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // the success message
   const successP = document.getElementById('success-game-name');
   if(gameFromUrl == null) {
-    successP.innerHTML = `unvr - ${new Date(today).toISOString().split('T')[0]}`;
+    successP.innerHTML = `uncvr.it - ${new Date(today).toISOString().split('T')[0]}`;
   } else {
-    successP.innerHTML = `unvr - custom`;
+    successP.innerHTML = `uncvr.it - custom`;
   }
 
 });
