@@ -48,15 +48,20 @@ footer {
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  padding: 2vh 0;
-  margin: 50px 0;
+  padding: 10px 0;
+  margin: 50px 0 0 0;
+}
 
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input {
   width: 80%;
-  max-width: 200px;
-  min-width: 50px;
+  max-width: 72vw;
+  min-width: 30px;
 }
 
 .sr-only {
@@ -69,7 +74,7 @@ input {
   }
 
 #album-guess-btn {
-  width: 80%;
+  width: 23%;
   max-width: 90px;
   min-width: 20px;
 }
@@ -146,4 +151,8 @@ h2 {
 
 .blur {
   filter: blur(10px);
+}
+
+button {
+  padding: 1px;
 }
