@@ -1,6 +1,11 @@
+:root {
+  --main-compliment-color: #9f95a99e;
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family: monospace;
 }
 
 hr {
@@ -194,12 +199,17 @@ input {
   text-align: center;
 }
 
+#trivia {
+  font-size: 1rem;
+  font-weight: 100;
+}
+
 #dialog {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  margin: 20px 0;
 }
 
 h2 {
@@ -232,4 +242,12 @@ h2 {
 
 button {
   padding: 3px;
+  color: #333;
+  box-shadow: 4px 4px var(--main-compliment-color);
+  border: 1px solid black;
+}
+
+button:active {
+  box-shadow: 1px 1px #666;
+  transform: translateY(4px);
 }

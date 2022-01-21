@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let p = document.createElement('p');
         p.setAttribute('id', 'trivia');
         p.innerHTML = todaysAlbum.trivia
-        document.getElementById('modal-container-win').appendChild(p);
+        document.getElementById('answer').appendChild(p);
       }
 
       let dialogDOM = document.getElementById('dialog');
