@@ -23,10 +23,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
       trivia: "<em>Ammnesia</em> was the first album released by <a href=\"https://en.wikipedia.org/wiki/Larry_Heard\">Larry Heard</a> as Mr. Fingers. The song \"<a href=\"https://www.youtube.com/watch?v=lwObuf_hgfE\">The Juice</a>\" was recently popularized on TikTok."
     },
     {
-      artist: "John Martyn",
-      title: "Solid Air",
+      artist: "Drake",
+      title: "Views",
       date: new Date(2022, 0, 22),
       image: "images/2022-01-22.jpg",
+      trivia: "<a href=\"https://www.youtube.com/watch?v=2lTB1pIg1y0\">Drake</a> is a Canadian rapper most known for purchasing hundreds of <a href=\"https://en.wikipedia.org/wiki/Aaliyah\">Aaliyah</a> t-shirts that in turn helped fund the infamous Toronto DIY venue Halo Halo. You can't fact check this, but it's true."
     },
     {
       artist: "Simon & Garfunkel",
