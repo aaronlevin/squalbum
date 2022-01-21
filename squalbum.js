@@ -342,7 +342,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   const ACCESS_ALLOWED_DOMAINS = [
     'imgur',
-    'localhost'
+    'localhost',
+    'uncvr'
   ];
 
   function accessAllowed(imageSrc) {
