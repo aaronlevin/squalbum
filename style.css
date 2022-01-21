@@ -1,8 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-
 }
 
 #game {
@@ -47,7 +45,7 @@ footer {
 
 .guess {
   display: flex;
-  flex-flow: row wrap;
+  /* flex-flow: row wrap; */
   align-items: center;
   justify-content: center;
   padding: 10px 0;
@@ -55,6 +53,7 @@ footer {
 }
 
 form {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,9 +128,16 @@ input {
   border-style: dotted;
   background: #fff;
   position: relative;
-  padding: 30px;
+  padding: 23px;
   margin: 15px;
   width: 90vw;
+}
+
+#dialogue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 
 h2 {
