@@ -19,20 +19,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     {
       artist: "Mr. Fingers",
       title: "Ammnesia",
-      date: new Date(2022, 0, 19),
-      image: "amnesia.jpg",
+      date: new Date(2022, 0, 21),
+      image: "images/2022-01-21.jpg",
     },
     {
       artist: "John Martyn",
       title: "Solid Air",
-      date: new Date(2022, 0, 20),
-      image: "solidair.jpg",
+      date: new Date(2022, 0, 22),
+      image: "images/2022-01-22.jpg",
     },
     {
       artist: "Simon & Garfunkel",
       title: "Bookends",
-      date: new Date(2022, 0, 21),
-      image: "bookends.jpg",
+      date: new Date(2022, 0, 23),
+      image: "images/2022-01-23.jpg",
     }
   ];
   const urlParams = new URLSearchParams(window.location.search);
@@ -42,9 +42,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   var todaysAlbum;
 
+  const now = new Date();
+  // day beginning at 00:00
+  // we use Math.floor to convert the date
+  // into an integer (milliseconds since epoch)
+  const today = Math.floor(new Date(now.getFullYear(), now.getMonth(), now.getDate()));
+
+
   const gameFromUrl = urlParams.get('game');
   if (gameFromUrl == null) {
-    const albumIndex = urlParams.get('album') || 2;
+    var albumIndex = urlParams.get('album');
+    if(albumIndex == null) {
+      const index = albums.findIndex((a) => a.date.getTime() == today);
+      if(index == -1) {
+        albumIndex = 2;
+      } else {
+        albumIndex = index;
+      }
+    }
+
     todaysAlbum = albums[albumIndex];
   } else {
     const decoded = decodeGameUrl(gameFromUrl);
@@ -54,13 +70,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       title: decoded.title
     };
   }
-
-
-  const now = new Date();
-  // day beginning at 00:00
-  // we use Math.floor to convert the date
-  // into an integer (milliseconds since epoch)
-  const today = Math.floor(new Date(now.getFullYear(), now.getMonth(), now.getDate()));
 
   /////////// admin functions /////////////////////
   const adminMode = urlParams.get('admin') || false;
@@ -112,13 +121,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
   /////////////// /image URL functions /////////////
 
-  /////////////// create modal  /////////////
-  const createImageBtn = document.getElementById('create-image-modal-btn');
-  createImageBtn.addEventListener('click', (event) => {
-    const modal = document.getElementById('create-dialog');
-    modal.showModal();
-  });
-
+  /////////////// create modal /////////////
   const createImgInput = document.getElementById('create-image-url');
   createImgInput.addEventListener('input', (event) => {
     // when the input changes, remove all contents
@@ -127,7 +130,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const div = document.getElementById('create-dialog-img');
     div.innerHTML = '';
     const imageUrl = event.target.value;
-    var img = new Image();
+    var img = new Image(200,200);
     img.src = imageUrl;
     div.appendChild(img);
   });
@@ -173,7 +176,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // fetch existing gameobject from local storage
   // if it exists. Also mark all historical guess
   // as "historical"
-  const fileName = `squalbum-${gameFromUrl || today.toString()}`
+  const fileName = `uncvr-${gameFromUrl || today.toString()}`
 
   function persistEvents(gameObject) {
     localStorage.setItem(fileName, JSON.stringify(gameObject));
@@ -334,6 +337,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     return str.trim().toLowerCase();
   }
 
+  const ACCESS_ALLOWED_DOMAINS = [
+    'imgur',
+    'localhost'
+  ];
+
+  function accessAllowed(imageSrc) {
+    try {
+      const { hostname } = new URL(imageSrc);
+      return ACCESS_ALLOWED_DOMAINS.some((domain) => {
+        return hostname.includes(domain);
+      });
+    } catch(_) {
+      return true;
+    }
+  }
+
   // returns a promise containing the image
   function renderGameObjectAsImage(gameObject, albumImage, canvas) {
     const imageCanvas = document.createElement('canvas');
@@ -344,7 +363,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let promises = [];
 
     gameObject.rectangles.forEach((rect) => {
-      if (rect.clicked) {
+      if (rect.clicked && accessAllowed(albumImage.src)) {
         const tmpCanvas = document.createElement('canvas');
         const width = gameObject.image.width;
         const height = gameObject.image.height;
@@ -367,6 +386,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
           return value;
         }));
 
+      } else if (rect.clicked) {
+        imageCtx.fillStyle = '#5da173';
+        imageCtx.fillRect(rect.image.x, rect.image.y, gameObject.image.width, gameObject.image.height);
+        imageCtx.fillStyle = '#AAAAAA';
+        let cx = rect.image.x + gameObject.image.width / 2;
+        let cy = rect.image.y + gameObject.image.height / 2;
       } else {
         imageCtx.fillStyle = '#000000';
         imageCtx.fillRect(rect.image.x, rect.image.y, gameObject.image.width, gameObject.image.height);
@@ -432,7 +457,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   var img = new Image();
-  img.crossOrigin = "anonymous";
   img.addEventListener('load', function () {
     const numRects = getNumRects()
     const oldState = localStorage.getItem(fileName);
@@ -489,6 +513,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }, false);
 
 
+  if (accessAllowed(todaysAlbum.image)) {
+    img.crossOrigin = "anonymous";
+  }
   img.src = todaysAlbum.image;
 
   ///////// settings and menu stuff//////
@@ -514,5 +541,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
     });
   });
+
+  //////// copy success image and text ///////////
+  const successCopy = document.getElementById('success-copy');
+  successCopy.addEventListener('click', (event) => {
+    const d = document.getElementById('dialog');
+    const range = document.createRange();
+    range.selectNodeContents(d);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    document.execCommand('copy');
+    sel.removeAllRanges();
+  });
+
+
+  // insert the name of the game into the
+  // the success message
+  const successP = document.getElementById('success-game-name');
+  if(gameFromUrl == null) {
+    successP.innerHTML = `unvr - ${new Date(today).toISOString().split('T')[0]}`;
+  } else {
+    successP.innerHTML = `unvr - custom`;
+  }
 
 });

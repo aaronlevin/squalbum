@@ -15,12 +15,12 @@
     <header>
       <div class="menu" data-modal="how-to-play" id="menu">(how-to)</div>
       <div class="title">
-        <h1>DUBBLE</h1>
+        <h1>UNCVR</h1>
       </div>
       <div class="menu" data-modal="settings">(settings)</div>
     </header>
     <div class="welcome">
-      <p>dubble is like <a href="https://www.powerlanguage.co.uk/wordle/">wordle</a>, but for
+      <p>!uncvr is like <a href="https://www.powerlanguage.co.uk/wordle/">wordle</a>, but for
         album art!</p>
     </div>
     <menu class="create-your-own" data-modal="create-your-own">
@@ -43,9 +43,8 @@
     <div class="modal-container">
       <button class="modal-close modal-exit">X</button>
       <h2>create your own game!!</h2>
-      <p>simply paste an <a
-        href="https://imgur.com" target="_blank">imgur</a> URL below to make a game with your own image!</p>
-      
+      <p>simply paste an image URL below to make a game with your image! <strong>Note</strong>: for "reasons" we prefer <a
+                                                                                                                            href="https://imgur.com" target="_blank">imgur</a> links over <code>discogs.com</codes> links.</p>
       <form id="generate-image-form" method="dialog">
         <label for="create-image-url" class="sr-only">imgur URL:</label>
         <input id="create-image-url" name="create-image-url" type="url" placeholder="image URL"/>
@@ -98,9 +97,11 @@
   <div class="modal" id="success">
     <div class="modal-bg modal-exit"></div>
     <div class="modal-container" id="modal-container-win">
-      <h2>🐢🐢🐢 !!!YOU GOT IT!!! 🛹🛹🛹</h2>
-      <p>copy the image and share your score with your friends!!</p>
-      <div id="dialog"></div>
+      <h2>🐢 !!!YOU GOT IT!!! 🛹</h2>
+      <div id="dialog" contenteditable="true">
+        <p id="success-game-name">uncvr</p>
+      </div>
+      <button id="success-copy">share</button>
       <!--
       -->
     </div>
