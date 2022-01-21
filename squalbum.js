@@ -138,9 +138,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   const generateGameUrl = document.getElementById('generate-game-url');
   generateGameUrl.addEventListener('click', (event) => {
-    const div = document.getElementById('generated-img-url');
-    // clear contents
-    div.innerHTML = '';
+    const generateImageForm = document.getElementById('generate-image-form');
 
     const imageUrl = document.getElementById('create-image-url').value;
     const title = document.getElementById('create-image-title').value;
@@ -160,11 +158,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const p = document.createElement('p');
     p.setAttribute('id', 'copy-custom-url');
     p.innerHTML = 'copy the URL to play a game with your image!';
-    div.appendChild(p);
-    div.appendChild(urlInput);
-    div.appendChild(copyBtn);
+
+    generateImageForm.innerHTML = '';
+    generateImageForm.appendChild(p);
+    generateImageForm.appendChild(urlInput);
+    generateImageForm.appendChild(copyBtn);
     const hr = document.createElement('hr');
-    div.appendChild(hr);
+    generateImageForm.appendChild(hr);
     return false;
   }, false);
 
