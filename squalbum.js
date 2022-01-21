@@ -160,7 +160,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const p = document.createElement('p');
     p.setAttribute('id', 'copy-custom-url');
     p.innerHTML = 'copy the URL to play your custom game with your image!';
-    div.appendChild(div1);
+
+    generateImageForm.innerHTML = '';
+    generateImageForm.appendChild(div1);
     div1.appendChild(p);
     div1.appendChild(urlInput);
     div1.appendChild(copyBtn);
