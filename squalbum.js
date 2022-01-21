@@ -437,6 +437,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     return returnPromise;
 
   }
+  function guessStats(gameObject) {
+    var total = 0;
+    var clicked = 0;
+    gameObject.rectangles.forEach((rect) => {
+      total++;
+      if(rect.clicked) {
+        clicked++;
+      }
+    });
+    return {
+      total: total,
+      clicked: clicked
+    };
+  }
   // handle a guess
   function handleGuessEvent(gameObject, event, canvas) {
     let guess = event.guess;
@@ -444,6 +458,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (guessedCorrectly) {
       let successClickModal = document.getElementById('success-click');
       successClickModal.dispatchEvent(new Event('click'));
+
+      const {total, clicked} = guessStats(gameObject);
+      const numGuessesP = document.getElementById('success-game-stats');
+      numGuessesP.innerHTML = `${clicked}/${total}`;
 
       var answerText = '';
       if('artist' in todaysAlbum) {
