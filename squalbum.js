@@ -408,7 +408,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         dialogDOM.appendChild(img);
       });
     } else if (!event.historical) {
-      navigator.vibrate(200);
+      // TODO(aaronlevin): this causes a failure on iOS.
+      //navigator.vibrate(200);
       // if it's a new guess and not a "historical" one
       // render a message to the user
       let p = document.createElement('p');
