@@ -414,10 +414,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
         imageCtx.fillStyle = draw.color.hex;
         imageCtx.fillRect(x, y, w, h);
       });
-      let returnImage = new Image(200, 200);
+      let returnImage = new Image();
       returnImage.crossOrigin = "anonymous";
       returnImage.src = imageCanvas.toDataURL();
-      return returnImage;
+
+      const tmpCanvas = document.createElement('canvas');
+      tmpCanvas.width = 200;
+      tmpCanvas.height = 200;
+      const ctx = tmpCanvas.getContext('2d');
+      ctx.drawImage(returnImage, 0, 0, 200, 200);
+
+      let finalImage = new Image(200,200);
+      finalImage.crossOrigin = "anonymous";
+      finalImage.src = tmpCanvas.toDataURL();
+
+      return finalImage;
     });
 
     return returnPromise;
