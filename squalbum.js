@@ -138,9 +138,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   const generateGameUrl = document.getElementById('generate-game-url');
   generateGameUrl.addEventListener('click', (event) => {
-    const div = document.getElementById('generated-img-url');
-    // clear contents
-    div.innerHTML = '';
+    const generateImageForm = document.getElementById('generate-image-form');
 
     const imageUrl = document.getElementById('create-image-url').value;
     const title = document.getElementById('create-image-title').value;
@@ -157,17 +155,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
       document.execCommand("copy");
     });
     copyBtn.appendChild(copyBtnText);
-    const p1 = document.createElement('p');
-    p1.setAttribute('id', 'copy-custom-url-form');
+    const div1 = document.createElement('div');
+    div1.setAttribute('id', 'copy-custom-url-form');
     const p = document.createElement('p');
     p.setAttribute('id', 'copy-custom-url');
     p.innerHTML = 'copy the URL to play your custom game with your image!';
-    div.appendChild(p1);
-    p1.appendChild(p);
-    p1.appendChild(urlInput);
-    p1.appendChild(copyBtn);
+    div.appendChild(div1);
+    div1.appendChild(p);
+    div1.appendChild(urlInput);
+    div1.appendChild(copyBtn);
+
     const hr = document.createElement('hr');
-    div.appendChild(hr);
+    generateImageForm.appendChild(hr);
     return false;
   }, false);
 
