@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
   function createLink(encodedGame) {
     const link =
-      "https://aaronlevin.github.io/squalbum/?" +
+      `${window.location.origin}/?` +
       `game=${encodedGame}`;
     return link;
   }
