@@ -463,6 +463,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const numGuessesP = document.getElementById('success-game-stats');
       numGuessesP.innerHTML = `${clicked}/${total}`;
 
+      const twitterShare = document.getElementById('twitter-share');
+      const twitterShareData = {
+        text: `uncvr.it - ${todayYYYYhhmm} - ${clicked}/${total}`
+        //url: window.location.href
+      };
+      const searchParams = new URLSearchParams(twitterShareData);
+      twitterShare.setAttribute('href', `https://twitter.com/intent/tweet?${searchParams.toString()}`);
+
       var answerText = '';
       if('artist' in todaysAlbum) {
         answerText += `${todaysAlbum.artist} - `
@@ -611,8 +619,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // insert the name of the game into the
   // the success message
   const successP = document.getElementById('success-game-name');
+  const todayYYYYhhmm = new Date(today).toISOString().split('T')[0];
   if(gameFromUrl == null) {
-    successP.innerHTML = `uncvr.it - ${new Date(today).toISOString().split('T')[0]}`;
+    successP.innerHTML = `uncvr.it - ${todayYYYYhhmm}`;
   } else {
     successP.innerHTML = `uncvr.it - custom`;
   }
