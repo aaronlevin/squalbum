@@ -12,6 +12,10 @@ hr {
   margin: 20px 0;
 }
 
+ul {
+  margin: 15px 0 15px 15px;
+}
+
 #game {
   box-sizing: border-box;
   margin: 2vw 2vw;
