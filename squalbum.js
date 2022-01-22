@@ -614,6 +614,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const successCopy = document.getElementById('success-copy');
   successCopy.addEventListener('click', (event) => {
     const d = document.getElementById('dialog');
+    d.setAttribute('contenteditable','true');
     const range = document.createRange();
     range.selectNodeContents(d);
     const sel = window.getSelection();
@@ -621,6 +622,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     sel.addRange(range);
     document.execCommand('copy');
     sel.removeAllRanges();
+    d.setAttribute('contenteditable','false');
   });
 
 
