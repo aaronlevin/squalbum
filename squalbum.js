@@ -35,6 +35,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       date: new Date(2022, 0, 23),
       image: "images/2022-01-23.jpg",
       trivia: "<em><a href=\"https://en.wikipedia.org/wiki/Beyonc%C3%A9:_Lemonade\">Lemonade</a></em> is the sixth album from Beyoncé, and her second \"visual\" album. The album received universal critical acclaim, including MTV\'s best music of the year for the song \"<a href=\"https://www.youtube.com/watch?v=WDZJPJV__bQ\">Formation</a>\""
+    },
+    {
+      artist: "Drexciya",
+      title: "Neptune's Lair",
+      date: new Date(2022, 0, 24),
+      image: "images/2022-01-24.jpg",
+      trivia: "<em>Neptune\'s Lair</em> is the second album from Detroit-based techno duo <a href=\"https://en.wikipedia.org/wiki/Drexciya\">Drexciya</a> and their first on the <a href=\"https://en.wikipedia.org/wiki/Tresor_(club)\">Tresor</a> label. While relatively late in their career, tracks like \"<a href=\"https://www.youtube.com/watch?v=e1Kg_BvCuy4\">Andreaen Sand Dunes</a>\" capture them in all their aquatic glory."
     }
   ];
   const urlParams = new URLSearchParams(window.location.search);
