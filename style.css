@@ -256,8 +256,20 @@ ul {
 }
 
 #clear-state {
-  margin: 15px 0;
-  width: 100%
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 60px 0;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  #clear-state {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+  }
 }
 
 /* //////// buttons /////////// */
