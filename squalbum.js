@@ -464,10 +464,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
       numGuessesP.innerHTML = `${clicked}/${total}`;
 
       const twitterShare = document.getElementById('twitter-share');
+      var twitterShareDataText;
+      if(gameFromUrl == null) {
+        twitterShareDataText = `uncvr.it - ${todayYYYYhhmm} - ${clicked}/${total}`;
+      } else {
+        twitterShareDataText = `uncvr.it - custom - ${clicked}/${total}`;
+      }
       const twitterShareData = {
-        text: `uncvr.it - ${todayYYYYhhmm} - ${clicked}/${total}`
-        //url: window.location.href
+        text: twitterShareDataText
       };
+      if(gameFromUrl != null) {
+        twitterShareData['url'] = window.location.href;
+      }
       const searchParams = new URLSearchParams(twitterShareData);
       twitterShare.setAttribute('href', `https://twitter.com/intent/tweet?${searchParams.toString()}`);
 
