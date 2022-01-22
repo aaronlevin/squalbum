@@ -30,10 +30,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
       trivia: "<a href=\"https://www.youtube.com/watch?v=uxpDa-c-4Mc\">Drake</a> is a Canadian rapper most known for purchasing hundreds of <a href=\"https://en.wikipedia.org/wiki/Aaliyah\">Aaliyah</a> t-shirts that in turn helped fund the infamous Toronto DIY venue Halo Halo. You can't fact check this, but it's true."
     },
     {
-      artist: "Simon & Garfunkel",
-      title: "Bookends",
+      artist: "Beyoncé",
+      title: "Lemonade",
       date: new Date(2022, 0, 23),
       image: "images/2022-01-23.jpg",
+      trivia: "<em><a href=\"https://en.wikipedia.org/wiki/Beyonc%C3%A9:_Lemonade\">Lemonade</a></em> is the sixth album from Beyoncé, and her second \"visual\" album. The album received universal critical acclaim, including MTV\'s best music of the year for the song \"<a href=\"https://www.youtube.com/watch?v=WDZJPJV__bQ\">Formation</a>\""
     }
   ];
   const urlParams = new URLSearchParams(window.location.search);
