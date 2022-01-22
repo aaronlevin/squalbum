@@ -97,6 +97,10 @@ input {
   width: 80%;
   min-width: 30px;
   padding: 3px;
+  border-radius: 0;
+  border: 1px solid black;
+  border-right: none;
+  /* margin-right: 5px; */
 }
 
 #generated-img-url{
@@ -140,9 +144,11 @@ input {
   }
 
 #album-guess-btn {
-  width: 18%;
+  width: auto;
   max-width: 90px;
   min-width: 20px;
+  border-radius: 0%;
+  border: 1px solid black;
 }
 
 #canvas {
@@ -254,4 +260,10 @@ button {
 button:active {
   box-shadow: 1px 1px #666;
   transform: translateY(4px);
+}
+
+#album-guess-btn:active {
+  background-color: #b0b0b0;
+  border: 1px solid #b0b0b0;
+  /* outline: 1px solid #b0b0b0; */
 }
