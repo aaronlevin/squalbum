@@ -65,18 +65,18 @@
     <div class="modal-container">
       <button class="modal-close modal-exit">X</button>
       <h2>how to play</h2>
-      <p>your goal is to guess the album title! click on squares to reveal portions of the album cover beneath. Some
-        notes:</p>
-      <ul>
-        <li>guess only the album title and not the artist.</li>
-        <li>there is a "difficulty" slider in the <em>(settings)</em> tab. Use it to make the game harder!</li>
-          to
-          cheat)</li>
-        <li>if you want to play again, click <em>(settings)</em> and then click <strong>clear state</strong></li>
-        <li>there will be bugs!! send feedback or bugs to <a href="https://twitter.com/aaronmblevin">@aaronmblevin</a></li>
-      </ul>
+      <p><span id="goal">your goal is to guess the album title!</span> click on squares to reveal portions of the album cover beneath.</p>
+<br>
+      <p>tip: guess only the album title and not the artist.</p>
+      <!-- <ul> -->
+        <!-- <li></li> -->
+        <!-- <li>there is a "difficulty" slider in the <em>(settings)</em> tab. Use it to make the game harder!</li> -->
+        <!-- <li>if you want to play again, click <em>(settings)</em> and then click <strong>reset game</strong></li> -->
+        <!-- <li>there will be bugs!! send feedback or bugs to <a href="https://twitter.com/aaronmblevin">@aaronmblevin</a></li> -->
+      <!-- </ul> -->
     </div>
   </div>
+
 
   <!-- modal: settings -->
   <div class="modal" id="settings">
@@ -84,10 +84,12 @@
     <div class="modal-container">
       <button class="modal-close modal-exit">X</button>
       <h2>settings</h2>
+      <form>
       <label for="difficulty">difficulty</label>
       <input id="difficulty" type="range" min="1" max="7" step="1" name="difficulty" value="5" />
+    </form>
       <div id="admin">
-        <button id="clear-state">clear state / cheat</button>
+        <button id="clear-state">reset game / cheat</button>
       </div>
     </div>
   </div>

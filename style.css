@@ -1,15 +1,12 @@
 :root {
   --main-compliment-color: #9f95a99e;
+  --hover-color: #e7e0ff;
 }
 
 * {
   margin: 0;
   padding: 0;
   font-family: monospace;
-}
-
-hr {
-  margin: 20px 0;
 }
 
 #game {
@@ -24,6 +21,7 @@ hr {
   }
 }
 
+/* //////// header & welcome /////////// */
 header {
   display: flex;
   justify-content: space-around;
@@ -33,12 +31,6 @@ header {
 
 .menu:hover {
   cursor: pointer;
-}
-
-footer {
-  text-align: center;
-  margin: 20px 0;
-  padding: 3px;
 }
 
 .welcome {
@@ -56,6 +48,21 @@ footer {
   padding: 0;
 }
 
+/* //////// headers /////////// */
+h1 {
+  font-size: 2.3rem;
+  font-weight: 200;
+}
+
+h2 {
+  margin: .5rem 0 1.5rem 0;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+/* //////// guess stuff /////////// */
 .guess {
   display: flex;
   /* flex-flow: row wrap; */
@@ -69,6 +76,7 @@ footer {
   text-align: center;
 }
 
+/* //////// forms & generated image /////////// */
 form, copy-custom-url-form {
   box-sizing: border-box;
   display: flex;
@@ -93,11 +101,17 @@ input {
   width: 80%;
   min-width: 30px;
   padding: 3px;
+  border-radius: 0;
+  border: 1px solid black;
+  border-right: none;
+}
+
+#generated-link {
+  margin-top: 20px;
 }
 
 #generated-img-url{
   display: flex;
-  /* flex-flow: row wrap; */
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -105,16 +119,8 @@ input {
   padding: 0;
 }
 
-/* #copy-custom-url-form {
-  width: 100%;
-} */
-
 #copy-custom-url {
-  font-family: serif;
-}
-
-#copy-button{
-  width: 16%;
+  font-family: monospace;
 }
 
 #generated-image{
@@ -126,6 +132,10 @@ input {
   margin: auto;
 }
 
+#copy-custom-url-form {
+  width: 100%;
+}
+
 .sr-only {
   position:absolute;
   left:-10000px;
@@ -133,14 +143,9 @@ input {
   width:1px;
   height:1px;
   overflow:hidden;
-  }
-
-#album-guess-btn {
-  width: 18%;
-  max-width: 90px;
-  min-width: 20px;
 }
 
+/* //////// the album cover! /////////// */
 #canvas {
   box-sizing: border-box;
   display: flex;
@@ -158,7 +163,7 @@ input {
   }
 }
 
-
+/* //////// modal related /////////// */
 .modal {
   position: fixed;
   width: 100vw;
@@ -195,32 +200,14 @@ input {
   width: 90vw;
 }
 
-#modal-container-win {
-  text-align: center;
-}
-
-#trivia {
-  font-size: 1rem;
-  font-weight: 100;
-}
-
-#dialog {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-h2 {
-  padding: .5rem 0 1rem 0;
-}
-
-
 @media (min-width: 480px) {
   .modal-container {
     width: 50vw;
   }
+}
+
+#modal-container-win {
+  text-align: center;
 }
 
 .modal-close {
@@ -240,14 +227,103 @@ h2 {
   filter: blur(10px);
 }
 
+/* //////// success modal /////////// */
+#trivia {
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+#dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* //////// how-to modal /////////// */
+ul {
+  margin: 15px 0 15px 15px;
+}
+
+/* //////// settings modal /////////// */
+#admin {
+  margin: 25px 0;
+}
+
+#difficulty {
+  margin-left: 20px;
+}
+
+#clear-state {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 60px 0;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  #clear-state {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+  }
+}
+
+/* //////// buttons /////////// */
 button {
   padding: 3px;
   color: #333;
-  box-shadow: 4px 4px var(--main-compliment-color);
+  box-shadow: 3px 3px var(--main-compliment-color);
   border: 1px solid black;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--hover-color);
 }
 
 button:active {
   box-shadow: 1px 1px #666;
   transform: translateY(4px);
+}
+
+#album-guess-btn:hover {
+  background-color: var(--hover-color);
+}
+
+#album-guess-btn:active {
+  background-color: #b0b0b0;
+  border: 1px solid #b0b0b0;
+}
+
+#copy-button{
+  width: 16%;
+  box-shadow: none;
+}
+
+#copy-button:active{
+  background-color: #b0b0b0;
+  border: 1px solid #b0b0b0;
+  box-shadow: none;
+  transform: none;
+}
+
+
+#album-guess-btn {
+  width: auto;
+  max-width: 90px;
+  min-width: 20px;
+  border-radius: 0%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+/* //////// footer /////////// */
+footer {
+  text-align: center;
+  margin: 20px 0;
+  padding: 3px;
 }
