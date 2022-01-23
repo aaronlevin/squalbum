@@ -505,6 +505,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
       let dialogDOM = document.getElementById('dialog');
       // if they guessed correctly, congradulate them.
       renderGameObjectAsImage(gameObject, img, canvas).then((img) => {
+        // clear old images
+        for(let child of dialogDOM.children) {
+          if(child.tagName == 'IMG') {
+            child.remove();
+          }
+        };
         dialogDOM.appendChild(img);
       });
       updateTimeRemainingRecur();
