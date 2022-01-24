@@ -42,6 +42,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       date: new Date(2022, 0, 24),
       image: "images/2022-01-24.jpg",
       trivia: "<em>Neptune\'s Lair</em> is the second album from Detroit-based techno duo <a href=\"https://en.wikipedia.org/wiki/Drexciya\">Drexciya</a> and their first on the <a href=\"https://en.wikipedia.org/wiki/Tresor_(club)\">Tresor</a> label. While relatively late in their career, tracks like \"<a href=\"https://www.youtube.com/watch?v=e1Kg_BvCuy4\">Andreaen Sand Dunes</a>\" capture them in all their aquatic glory."
+    },
+    {
+      artist: "Boards of Canada",
+      title: "Music Has The Right To Children",
+      date: new Date(2022, 0, 25),
+      image: "images/2022-01-25.jpg",
+      trivia: "Internet people spend their entire lives trying to figure out what synthesizers are used on Boards of Canada's <a href=\"https://www.youtube.com/playlist?list=OLAK5uy_mt1uPu5r3DeEptU-yQ5_DYLS5t_qU0C30\">breakthrough album</a> from 1998."
     }
   ];
   const urlParams = new URLSearchParams(window.location.search);
