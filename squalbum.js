@@ -49,6 +49,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       date: new Date(2022, 0, 25),
       image: "images/2022-01-25.jpg",
       trivia: "Internet people spend their entire lives trying to figure out what synthesizers are used on Boards of Canada's <a href=\"https://www.youtube.com/playlist?list=OLAK5uy_mt1uPu5r3DeEptU-yQ5_DYLS5t_qU0C30\">breakthrough album</a> from 1998."
+    },
+    {
+      artist: "Steely Dan",
+      title: "Katy Lied",
+      date: new date(2022, 0, 26),
+      image: "images/2022-01-26,
+      trivia: "Who are these children that scheme and run wild? What are the secrets they trace in the sky? And why do you tremble each time they ride by? Throw out <a href=\"https://www.youtube.com/watch?v=QzAJqKll6hI\">your gold teeth</a> and see how they roll."
     }
   ];
   const urlParams = new URLSearchParams(window.location.search);
