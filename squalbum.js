@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       title: "808s & Heartbreak",
       date: new Date(2022, 0, 27),
       image: "images/2022-01-27.jpg",
-      trivia: ""
+      trivia: "To be honest I've never listen to this album on account of its title."
     }
   ];
   const urlParams = new URLSearchParams(window.location.search);
