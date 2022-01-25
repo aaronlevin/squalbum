@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     {
       artist: "Steely Dan",
       title: "Katy Lied",
-      date: new date(2022, 0, 26),
+      date: new Date(2022, 0, 26),
       image: "images/2022-01-26,
       trivia: "Who are these children that scheme and run wild? What are the secrets they trace in the sky? And why do you tremble each time they ride by? Throw out <a href=\"https://www.youtube.com/watch?v=QzAJqKll6hI\">your gold teeth</a> and see how they roll."
     }
