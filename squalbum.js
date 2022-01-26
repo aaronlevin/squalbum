@@ -445,9 +445,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const twitterShare = document.getElementById('twitter-share');
       var twitterShareDataText;
       if(gameFromUrl == null) {
-        twitterShareDataText = `uncvr.it - ${todayYYYYhhmm} - ${clicked}/${total}`;
+        twitterShareDataText = `uncvr.it - ${todayYYYYhhmm} - ${clicked}/${total}\n${renderSummary(gameObject)}`;
       } else {
-        twitterShareDataText = `uncvr.it - custom - ${clicked}/${total}`;
+        twitterShareDataText = `uncvr.it - custom - ${clicked}/${total}\n${renderSummary(gameObject)}`;
       }
       const twitterShareData = {
         text: twitterShareDataText
@@ -511,14 +511,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   var img = new Image();
   img.addEventListener('load', function () {
-    const numRects = getNumRects()
+    const numRects = getNumRects();
     const oldState = localStorage.getItem(fileName);
-    let gameObject
+    let gameObject;
     if (oldState) {
       const parsedState = JSON.parse(oldState)
-      const difficultyIndex = difficulties.indexOf(parsedState.numRects) + 1
-      document.getElementById('difficulty').value = difficultyIndex
-      gameObject = parsedState
+      const difficultyIndex = difficulties.indexOf(parsedState.numRects) + 1;
+      document.getElementById('difficulty').value = difficultyIndex;
+      gameObject = parsedState;
     } else {
       gameObject = createGameObject(img, canvas, numRects);
     }
@@ -563,6 +563,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
       generalEventHandler(gameObject, guessEvent, canvas, ctx);
     })
 
+
+    //////// copy success image and text ///////////
+    const successCopy = document.getElementById('success-copy');
+    successCopy.addEventListener('click', (event) => {
+      const d = document.getElementById('dialog');
+      d.setAttribute('contenteditable','true');
+
+      const p = document.createElement('p');
+      p.innerHTML = renderSummary(gameObject).replaceAll('\n','<br>');
+      d.appendChild(p);
+
+      const range = document.createRange();
+      range.selectNodeContents(d);
+
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      document.execCommand('copy');
+      sel.removeAllRanges();
+      p.remove();
+      d.setAttribute('contenteditable','false');
+    });
+
   }, false);
 
 
@@ -595,21 +618,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 
-  //////// copy success image and text ///////////
-  const successCopy = document.getElementById('success-copy');
-  successCopy.addEventListener('click', (event) => {
-    const d = document.getElementById('dialog');
-    d.setAttribute('contenteditable','true');
-    const range = document.createRange();
-    range.selectNodeContents(d);
-    const sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
-    document.execCommand('copy');
-    sel.removeAllRanges();
-    d.setAttribute('contenteditable','false');
-  });
-
+  //////// generate text version of success ///////
+  function renderSummary(gameObject) {
+    const numRects = getNumRects()
+    let buffer = "";
+    gameObject.rectangles.forEach((rect, index) => {
+      if (index % numRects == 0 && index != 0) {
+        buffer += "\n";
+      }
+      if (rect.clicked) {
+        // purple circle
+        buffer += "🟣";
+      } else {
+        // black square
+        buffer += "⬛";
+      }
+    });
+    return buffer;
+  }
 
   // insert the name of the game into the
   // the success message
