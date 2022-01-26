@@ -48,6 +48,13 @@ function importAlbums() {
       date: new Date(2022, 0, 27),
       image: "images/2022-01-27.jpg",
       trivia: "To be honest I've never listen to this album on account of its title."
+    },
+    {
+      artist: "Bill Evans - Jim Hall",
+      title: "Undercurrent",
+      date: new Date(2022, 0, 28),
+      image: "images/2022-01-28.jpg",
+      trivial: "It's easy to lose an hour staring at the Grammy-winning cover directed by <a href=\"https://www.montrosepress.com/obituaries/frank-gauna/article_5e9d3746-46c8-11e4-a17a-bbeb390d7a94.html\">Frank Guana</a>. Frank started as an impressionist painter and created the artwork for many children's albums before temporarily injuring his hand and forcing him to dip into photography."
     }
   ];
 }
