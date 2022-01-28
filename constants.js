@@ -54,7 +54,14 @@ function importAlbums() {
       title: "Undercurrent",
       date: new Date(2022, 0, 28),
       image: "images/2022-01-28.jpg",
-      trivial: "It's easy to lose an hour staring at the Grammy-winning cover directed by <a href=\"https://www.montrosepress.com/obituaries/frank-gauna/article_5e9d3746-46c8-11e4-a17a-bbeb390d7a94.html\">Frank Guana</a>. Frank started as an impressionist painter and created the artwork for many children's albums before temporarily injuring his hand and forcing him to dip into photography."
+      trivia: "It's easy to lose an hour staring at the Grammy-winning cover directed by <a href=\"https://www.montrosepress.com/obituaries/frank-gauna/article_5e9d3746-46c8-11e4-a17a-bbeb390d7a94.html\">Frank Guana</a>. Frank started as an impressionist painter and created the artwork for many children's albums before temporarily injuring his hand and forcing him to dip into photography."
+    },
+    {
+      artist: "Don Cherry",
+      title: "Organic Music Society",
+      date: new Date(2022, 0, 29),
+      image: "images/2022-01-29.jpg",
+      trivia: ""
     }
   ];
 }
