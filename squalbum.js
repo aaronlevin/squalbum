@@ -313,10 +313,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
     updateGuesses(gameObject, mouseCoords);
   }
 
+  const REPLACEMENTS = [
+    ['&', 'and']
+  ];
+
+  const REMOVALS = [
+    '!',
+    '-',
+    '\'',
+    '\"',
+    '’',
+  ]
+
+  function replaceChars(str) {
+    var returnStr = str;
+    REPLACEMENTS.forEach((r) => {
+      returnStr = returnStr.replaceAll(r[0], r[1]);
+    });
+    return returnStr;
+  }
+
+  function removeChars(str) {
+    var returnStr = str;
+    REMOVALS.forEach((r) => {
+      // first remove any stranglers, like: foo ! bar => foo bar
+      returnStr = returnStr.replaceAll(` ${r} `, ' ');
+      // then remove any appended, like: foo's => foos
+      returnStr = returnStr.replaceAll(r, '');
+    });
+    return returnStr;
+  }
+
   // utility function to clean strings for
   // guess comparison
   function cleanString(str) {
-    return str.trim().toLowerCase();
+    return removeChars(replaceChars(str.trim().toLowerCase()));
   }
 
   const ACCESS_ALLOWED_DOMAINS = [
