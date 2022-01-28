@@ -83,6 +83,13 @@ function importAlbums() {
       date: new Date(2022, 1, 01),
       image: "images/2022-02-01.jpg",
       trivia: "After leaving <a href=\"https://en.wikipedia.org/wiki/Sun_Ra\">Sun Ra's Arkestra</a> in 1961, Philip Cohran moved to Chicago, establishing the windy city as a new hub for spiritual jazz. Originally released in 1968, <i><a href=\"https://www.youtube.com/watch?v=vi-wJ2F2n8k\">The Malcom X Memorial</a></i> is a dedication to the political and spiritual life of Malcom X."
+    },
+    {
+      artist: "Bad Brains",
+      title: "Pay to Cum!",
+      date: new Date(2022, 2, 02),
+      image: "images/2022-02-02.jpg",
+      trivia: "Debut single from hardcore legends <a href=\"https://en.wikipedia.org/wiki/Bad_Brains\">Bad Brains</a>. While the title track \"<a href=\"https://www.youtube.com/watch?v=6rAaW9AQDEE\">Pay to Cum!</a> is a blistering example of early American hardcore, the b-side is... a ballad? Nonetheless, <i>Pay to Cum!</i> remains one of the most sought after punk singles."
     }
   ];
 }
