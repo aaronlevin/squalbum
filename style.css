@@ -321,6 +321,15 @@ button:active {
   cursor: pointer;
 }
 
+#hint-btn {
+  width: auto;
+  max-width: 90px;
+  min-width: 20px;
+  border-radius: 0%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
 /* //////// footer /////////// */
 footer {
   text-align: center;

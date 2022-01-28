@@ -37,6 +37,9 @@
     </div>
     <div id="dialog-failure"></div>
     <canvas id="canvas" width="600vw" height="600vh"></canvas>
+    <menu class="create-your-own" id="hint-menu" data-modal="hint">
+      <button id="hint-btn">hint</div>
+    </menu>
   </div>
 
   <!-- modal: create your own -->
@@ -111,6 +114,15 @@
       <button id="success-copy">copy</button>
       <a id="twitter-share">tweet</a>
       <div id="time-remaining"></div>
+    </div>
+  </div>
+
+  <!-- modal: hint -->
+  <div class="modal" id="hint">
+    <div class="modal-bg modal-exit"></div>
+    <div class="modal-container" id="modal-container-win">
+      <button class="modal-close modal-exit">X</button>
+      <div id="hint-contents"></div>
     </div>
   </div>
 

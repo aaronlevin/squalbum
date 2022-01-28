@@ -624,6 +624,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
       d.setAttribute('contenteditable','false');
     });
 
+    // Render hint
+    if(todaysAlbum.artist === undefined) {
+      const menu = document.getElementById('hint-menu');
+      menu.remove();
+    } else {
+      const div = document.getElementById('hint-contents');
+      div.innerHTML = `<p>the artist for this album is: <strong>${todaysAlbum.artist}</strong>.</p><p>Goo luck!</p>`;
+    }
+
     // if game has already been completed,
     // simulate a guess
     if(gameObject.completed) {
