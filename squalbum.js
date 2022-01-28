@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // we use Math.floor to convert the date
   // into an integer (milliseconds since epoch)
   const todayDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const today = Math.floor(todayDate);
+  var today = Math.floor(todayDate);
 
   const gameFromUrl = urlParams.get('game');
   if (gameFromUrl == null) {
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     todaysAlbum = albums[albumIndex];
+    today = Math.floor(todaysAlbum.date);
   } else {
     const decoded = decodeGameUrl(gameFromUrl);
     imageUrl = decoded.url;
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       title: decoded.title
     };
   }
+
 
   /////////// admin functions /////////////////////
   let btn = document.getElementById('clear-state');
@@ -217,7 +219,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       tile: {
         width: canvasTileWidth,
         height: canvasTileHeight
-      }
+      },
+      completed: false,
+      finalGuess: ""
     }
   }
 
@@ -466,6 +470,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let guess = event.guess;
     let guessedCorrectly = cleanString(guess) === cleanString(todaysAlbum.title);
     if (guessedCorrectly) {
+      // update game object to reflect a correct guess
+      gameObject.completed = true;
+      gameObject.finalGuess = guess;
       let successClickModal = document.getElementById('success-click');
       successClickModal.dispatchEvent(new Event('click'));
 
@@ -617,7 +624,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
       d.setAttribute('contenteditable','false');
     });
 
+    // if game has already been completed,
+    // simulate a guess
+    if(gameObject.completed) {
+      simulateGuess(gameObject.finalGuess);
+    }
+
   }, false);
+
+  function simulateGuess(guess) {
+    const input = document.getElementById('album-guess');
+    input.value = guess;
+    const submit = document.getElementById('album-guess-btn');
+    submit.click();
+  }
 
 
   if (accessAllowed(todaysAlbum.image)) {
