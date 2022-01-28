@@ -61,7 +61,28 @@ function importAlbums() {
       title: "Organic Music Society",
       date: new Date(2022, 0, 29),
       image: "images/2022-01-29.jpg",
-      trivia: ""
+      trivia: "<i>Organic Music Society</i> is an album of <a href=\"https://www.youtube.com/watch?v=pwPpO8wOdeE\">transformation</a>; Don's escape from the spectre of heroin into a spiritual collaboration with <a href=\"https://en.wikipedia.org/wiki/Moki_Cherry\">Moki Cherry</a>, a Swedish textile artist whose art adorns the incredible cover. An excellent book, <i><a href=\"https://blankformseditions.bandcamp.com/merch/blank-forms-06-organic-music-societies\">Organic Music Societies</a></i>, documenting this era and scene was recently published."
+    },
+    {
+      artist: "Funkadelic",
+      title: "Cosmic Slop",
+      date: new Date(2022, 0, 30),
+      image: "images/2022-01-30.jpg",
+      trivia: "<a href=\"https://www.youtube.com/watch?v=HOr6jFg7Nno&list=OLAK5uy_n3_bCT4_FrNN0XJgB54HCl3n-ZbHxdgO4\"><i>Cosmic Slop</i></a> was the first in what would become a long series of collaborations between illustrator <a href=\"https://en.wikipedia.org/wiki/Pedro_Bell\">Pedro Bell</a> and <a href=\"https://en.wikipedia.org/wiki/Funkadelic\">Funkadelic</a> / George Clinton."
+    },
+    {
+      artist: "Neil Young",
+      title: "On the Beach",
+      date: new Date(2022, 0, 31),
+      image: "images/2022-01-31.jpg",
+      trivia: "I'm always wondering why Neil took his <a href=\"https://www.youtube.com/watch?v=CLi6stJrF5A&list=OLAK5uy_kCObOBgM25TWIdQM6_s5_0Mc1QPxSji_k\">shoes off</a>."
+    },
+    {
+      artist: "Philip Cohran And The Artistic Heritage Ensemble",
+      title: "The Malcom X Memorial",
+      date: new Date(2022, 1, 01),
+      image: "images/2022-02-01.jpg",
+      trivia: "After leaving <a href=\"https://en.wikipedia.org/wiki/Sun_Ra\">Sun Ra's Arkestra</a> in 1961, Philip Cohran moved to Chicago, establishing the windy city as a new hub for spiritual jazz. Originally released in 1968, <i><a href=\"https://www.youtube.com/watch?v=vi-wJ2F2n8k\">The Malcom X Memorial</a></i> is a dedication to the political and spiritual life of Malcom X."
     }
   ];
 }
