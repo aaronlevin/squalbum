@@ -117,7 +117,7 @@ function importAlbums() {
       title: "CrazySexyCool",
       date: new Date(2022, 2, 06),
       image: "images/2022-02-06.jpg",
-      trivia: "I will always <a href=\"https://www.youtube.com/watch?v=8WEtxJ4-sh4\">chase waterfalls</a>."
+      trivia: "I will always <a href=\"https://www.youtube.com/watch?v=8WEtxJ4-sh4\">chase waterfalls</a>. Specifically <a href=\"https://waterfallsofontario.com/\">these ones</a>."
     },
     {
       artist: "Guy",
