@@ -103,7 +103,28 @@ function importAlbums() {
       title: "Diamond Life",
       date: new Date(2022, 2, 04),
       image: "images/2022-02-04.jpg",
-      trivia: "Judging by some of the foibles on this website, I would not say I am a \"<a href=\"https://www.youtube.com/watch?v=4TYv2PhG89A\">Smooth Operator</a>.\""
+      trivia: "Judging by some of the foibles on this website, I would not say that I am a \"<a href=\"https://www.youtube.com/watch?v=4TYv2PhG89A\">Smooth Operator</a>.\""
+    },
+    {
+      artist: "A Taste of Honey",
+      title: "A Taste of Honey",
+      date: new Date(2022, 2, 05),
+      image: "images/2022-02-05.jpg",
+      trivia: "A Taste of Honey were the first black group to win a Best New Artist Grammy (1979). Their <a href=\"https://www.youtube.com/watch?v=PhD58dP9kq8\">self-titled debut</a> was the most successful <a href=\"https://en.wikipedia.org/wiki/Mizell_Brothers\">Mizelli Brothers</a> production."
+    },
+    {
+      artist: "TLC",
+      title: "CrazySexyCool",
+      date: new Date(2022, 2, 06),
+      image: "images/2022-02-06.jpg",
+      trivia: "I will always <a href=\"https://www.youtube.com/watch?v=8WEtxJ4-sh4\">chase waterfalls</a>."
+    },
+    {
+      artist: "Guy",
+      title: "Guy",
+      date: new Date(2022, 2, 07),
+      image: "images/2022-02-07.jpg",
+      trivia: "The album that invented <a href=\"https://en.wikipedia.org/wiki/New_jack_swing\">New JacK Swing</a> and launched the career of producer <a href=\"https://en.wikipedia.org/wiki/Teddy_Riley\">Teddy Riley</a>. Every copy of the album came with exactly one <a href=\"https://www.youtube.com/watch?v=Vz5oJO94R3I\">Teddy jam</a> and a <a href=\"https://www.youtube.com/watch?v=obYOYgW9MvY\">piece of [teddy's] love</a>."
     }
   ];
 }
