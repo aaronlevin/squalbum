@@ -97,6 +97,13 @@ function importAlbums() {
       date: new Date(2022, 2, 03),
       image: "images/2022-02-03.jpg",
       trivia: "Debut solo album from the man who brought social consciousness to soul. Released in 1970, <i>Curtis</i> contains the gutting \"<a href=\"https://www.youtube.com/watch?v=BzsmciMNAGU\">(Don't Worry) If There Is A Hell Below, We're All Gonna Go</a>\" alongside the sanguine \"<a href=\"https://www.youtube.com/watch?v=6Z66wVo7uNw\">Move on Up</a>.\""
+    },
+    {
+      artist: "Sade",
+      title: "Diamond Life",
+      date: new Date(2022, 2, 04),
+      image: "images/2022-02-04.jpg",
+      trivia: "Judging by some of the foibles on this website, I would not say I am a \"<a href=\"https://www.youtube.com/watch?v=4TYv2PhG89A\">Smooth Operator</a>.\""
     }
   ];
 }
