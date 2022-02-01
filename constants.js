@@ -79,7 +79,7 @@ function importAlbums() {
     },
     {
       artist: "Philip Cohran And The Artistic Heritage Ensemble",
-      title: "The Malcom X Memorial",
+      title: "The Malcolm X Memorial",
       date: new Date(2022, 1, 01),
       image: "images/2022-02-01.jpg",
       trivia: "After leaving <a href=\"https://en.wikipedia.org/wiki/Sun_Ra\">Sun Ra's Arkestra</a> in 1961, Philip Cohran moved to Chicago, establishing the windy city as a new hub for spiritual jazz. Originally released in 1968, <i><a href=\"https://www.youtube.com/watch?v=vi-wJ2F2n8k\">The Malcom X Memorial</a></i> is a dedication to the political and spiritual life of Malcom X."
