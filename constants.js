@@ -87,7 +87,7 @@ function importAlbums() {
     {
       artist: "Bad Brains",
       title: "Pay to Cum!",
-      date: new Date(2022, 2, 02),
+      date: new Date(2022, 1, 02),
       image: "images/2022-02-02.jpg",
       trivia: "Debut single from hardcore legends <a href=\"https://en.wikipedia.org/wiki/Bad_Brains\">Bad Brains</a>. While the title track \"<a href=\"https://www.youtube.com/watch?v=6rAaW9AQDEE\">Pay to Cum!</a> is a blistering example of early American hardcore, the b-side is... a ballad? Nonetheless, <i>Pay to Cum!</i> remains one of the most sought after punk singles."
     },
@@ -101,28 +101,28 @@ function importAlbums() {
     {
       artist: "Sade",
       title: "Diamond Life",
-      date: new Date(2022, 2, 04),
+      date: new Date(2022, 1, 04),
       image: "images/2022-02-04.jpg",
       trivia: "Judging by some of the foibles on this website, I would not say that I am a \"<a href=\"https://www.youtube.com/watch?v=4TYv2PhG89A\">Smooth Operator</a>.\""
     },
     {
       artist: "A Taste of Honey",
       title: "A Taste of Honey",
-      date: new Date(2022, 2, 05),
+      date: new Date(2022, 1, 05),
       image: "images/2022-02-05.jpg",
       trivia: "A Taste of Honey were the first black group to win a Best New Artist Grammy (1979). Their <a href=\"https://www.youtube.com/watch?v=PhD58dP9kq8\">self-titled debut</a> was the most successful <a href=\"https://en.wikipedia.org/wiki/Mizell_Brothers\">Mizelli Brothers</a> production."
     },
     {
       artist: "TLC",
       title: "CrazySexyCool",
-      date: new Date(2022, 2, 06),
+      date: new Date(2022, 1, 06),
       image: "images/2022-02-06.jpg",
       trivia: "I will always <a href=\"https://www.youtube.com/watch?v=8WEtxJ4-sh4\">chase waterfalls</a>. Specifically <a href=\"https://waterfallsofontario.com/\">these ones</a>."
     },
     {
       artist: "Guy",
       title: "Guy",
-      date: new Date(2022, 2, 07),
+      date: new Date(2022, 1, 07),
       image: "images/2022-02-07.jpg",
       trivia: "The album that invented <a href=\"https://en.wikipedia.org/wiki/New_jack_swing\">New JacK Swing</a> and launched the career of producer <a href=\"https://en.wikipedia.org/wiki/Teddy_Riley\">Teddy Riley</a>. Every copy of the album came with exactly one <a href=\"https://www.youtube.com/watch?v=Vz5oJO94R3I\">Teddy jam</a> and a <a href=\"https://www.youtube.com/watch?v=obYOYgW9MvY\">piece of [teddy's] love</a>."
     }
