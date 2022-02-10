@@ -139,6 +139,13 @@ function importAlbums() {
       date: new Date(2022, 1, 11),
       image: "images/2022-02-11.jpg",
       trivia: "So come give me <a href=\"https://www.youtube.com/watch?v=5qm8PH4xAss\">a hug</a>."
+    },
+    {
+      artist: "D'angelo",
+      title: "Voodoo",
+      date: new Date(2022, 1, 12),
+      image: "images/2022-02-12.jpg",
+      trivia: "<a href=\"https://www.youtube.com/watch?v=SxVNOnPyvIU\">How does it feel</a> to have D'angelo courting you?"
     }
   ];
 }
