@@ -131,7 +131,7 @@ function importAlbums() {
       title: "Breaking Atoms",
       date: new Date(2022, 1, 10),
       image: "images/2022-02-10.jpg",
-      trivia: "Main Source's debut album is notable for two main reasons: it features the first appearance of <a href=\"https://www.youtube.com/watch?v=ta3srWr4sJQ\">Nas</a> and is, on a technicality, a <a href=\"https://en.wikipedia.org/wiki/K-Cut_(producer)\">Canadian</a> album."
+      trivia: "Main Source's debut album is notable for two reasons: it features the first appearance of <a href=\"https://www.youtube.com/watch?v=ta3srWr4sJQ\">Nas</a> and is, on a technicality, a <a href=\"https://en.wikipedia.org/wiki/K-Cut_(producer)\">Canadian</a> album."
     },
     {
       artist: "50 Cent",
