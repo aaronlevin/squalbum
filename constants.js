@@ -125,6 +125,20 @@ function importAlbums() {
       date: new Date(2022, 1, 07),
       image: "images/2022-02-07.jpg",
       trivia: "The album that invented <a href=\"https://en.wikipedia.org/wiki/New_jack_swing\">New JacK Swing</a> and launched the career of producer <a href=\"https://en.wikipedia.org/wiki/Teddy_Riley\">Teddy Riley</a>. Every copy of the album came with exactly one <a href=\"https://www.youtube.com/watch?v=Vz5oJO94R3I\">Teddy jam</a> and a <a href=\"https://www.youtube.com/watch?v=obYOYgW9MvY\">piece of [teddy's] love</a>."
+    },
+    {
+      artist: "Main Source",
+      title: "Breaking Atoms",
+      date: new Date(2022, 1, 10),
+      image: "images/2022-02-10.jpg",
+      trivia: "Main Source's debut album is notable for two main reasons: it features the first appearance of <a href=\"https://www.youtube.com/watch?v=ta3srWr4sJQ\">Nas</a> and is, on a technicality, a <a href=\"https://en.wikipedia.org/wiki/K-Cut_(producer)\">Canadian</a> album."
+    },
+    {
+      artist: "50 Cent",
+      title: "Get Rich Or Die Tryin'",
+      date: new Date(2022, 1, 11),
+      image: "images/2022-02-11.jpg",
+      trivia: "So come give me <a href=\"https://www.youtube.com/watch?v=5qm8PH4xAss\">a hug</a>."
     }
   ];
 }
