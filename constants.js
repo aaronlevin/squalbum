@@ -155,18 +155,25 @@ function importAlbums() {
       trivia: "According to <a href=\"https://twitter.com/methodman/status/940094957724975104\">this Method Man tweet from 2017</a>, <em>Tical</em> is slang for \"trees\" in Staten Island and not <a href=\"https://erowid.org/chemicals/pcp/\">PCP</a> as everyone on the entire earth has been saying since 1994."
     },
     {
-      artist: "",
-      title: "",
-      date: new Date(),
-      image: "images/",
-      trivia: ""
+      artist: "The Supremes",
+      title: "Meet the Supremes",
+      date: new Date(2022, 1, 14),
+      image: "images/2022-02-14.jpg",
+      trivia: "<em>Meet the Supremes</em> is the debut album from Motown's most commercially successful group."
     },
     {
-      artist: "",
-      title: "",
-      date: new Date(),
-      image: "images/",
-      trivia: ""
+      artist: "John Coltrane",
+      title: "A Love Supreme",
+      date: new Date(2022, 1, 15),
+      image: "images/2022-02-15.jpg",
+      trivia: "~~~ * <a href=\"https://www.youtube.com/watch?v=fth9UUa1Mfw\"><em>a. love. supreme.</em></a> * ~~~"
     },
+    {
+      artist: "Organized Konfusion",
+      title: "Stress: The Extinction Agenda",
+      date: new Date(2022, 1, 16),
+      image: "images/2022-02-16.jpg",
+      trivia: "As a Canadian, the ubiquitous presence of snow in the video for \"<a href=\"https://www.youtube.com/watch?v=YCNbvTCbsFI\">Stress</a>\" resonates with my core existential experience: crush, kill, and destroy the snow on my driveway."
+    }
   ];
 }
