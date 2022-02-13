@@ -146,6 +146,27 @@ function importAlbums() {
       date: new Date(2022, 1, 12),
       image: "images/2022-02-12.jpg",
       trivia: "<a href=\"https://www.youtube.com/watch?v=SxVNOnPyvIU\">How does it feel</a> to have D'angelo courting you?"
-    }
+    },
+    {
+      artist: "Method Man",
+      title: "Tical",
+      date: new Date(2022, 1, 13),
+      image: "images/2022-02-13.jpg",
+      trivia: "According to <a href=\"https://twitter.com/methodman/status/940094957724975104\">this Method Man tweet from 2017</a>, <em>Tical</em> is slang for \"trees\" in Staten Island and not <a href=\"https://erowid.org/chemicals/pcp/\">PCP</a> as everyone on the entire earth has been saying since 1994."
+    },
+    {
+      artist: "",
+      title: "",
+      date: new Date(),
+      image: "images/",
+      trivia: ""
+    },
+    {
+      artist: "",
+      title: "",
+      date: new Date(),
+      image: "images/",
+      trivia: ""
+    },
   ];
 }
