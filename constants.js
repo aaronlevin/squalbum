@@ -187,7 +187,7 @@ function importAlbums() {
       title: "Worldwide Underground",
       date: new Date(2022, 1, 18),
       image: "images/2022-02-18.jpg",
-      trivia: "Slept-on mid-period album from Eryka, whose first half several <a href=\"https://www.youtube.com/watch?v=51OITPsjEu0\">languid</a> <a href=\"https://www.youtube.com/watch?v=BbVIsYRP5P4\">groovers</a>."
+      trivia: "Slept-on mid-period album from Eryka, whose first half features several <a href=\"https://www.youtube.com/watch?v=51OITPsjEu0\">languid</a> <a href=\"https://www.youtube.com/watch?v=BbVIsYRP5P4\">groovers</a>."
     }
   ];
 }
