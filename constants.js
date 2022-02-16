@@ -174,6 +174,20 @@ function importAlbums() {
       date: new Date(2022, 1, 16),
       image: "images/2022-02-16.jpg",
       trivia: "As a Canadian, the ubiquitous presence of snow in the video for \"<a href=\"https://www.youtube.com/watch?v=YCNbvTCbsFI\">Stress</a>\" resonates with my core existential experience: crush, kill, and destroy the snow on my driveway."
+    },
+    {
+      artist: "Elizabeth Cotton",
+      title: "Folksongs And Instrumentals With Guitar",
+      date: new Date(2022, 1, 17),
+      image: "images/2022-02-17.jpg",
+      trivia: "Debut album from one of the greatest blues musicians. Elizabeth played her guitar upside down and wrote the hit \"<a href=\"https://www.youtube.com/watch?v=IUK8emiWabU\">Freight Train</a>\" when she was just 11 years old."
+    },
+    {
+      artist: "Eryka Badu",
+      title: "Worldwide Underground",
+      date: new Date(2022, 1, 18),
+      image: "images/2022-02-18.jpg",
+      trivia: "Slept-on mid-period album from Eryka, whose first half several <a href=\"https://www.youtube.com/watch?v=51OITPsjEu0\">languid</a> <a href=\"https://www.youtube.com/watch?v=BbVIsYRP5P4\">groovers</a>."
     }
   ];
 }
