@@ -202,6 +202,13 @@ function importAlbums() {
       date: new Date(2022, 1, 20),
       image: "images/2022-02-20.jpg",
       trivia: "<em><a href=\"https://www.youtube.com/watch?v=7UfVr5Xib50\">The Score</a></em> is the best selling hip-hop album of all time."
+    },
+    {
+      artist: "Tracy Chapman",
+      title: "Tracy Chapman",
+      date: new Date(2022, 1, 21),
+      image: "images/2022-02-21.jpg",
+      trivia: "You gotta make <a href=\"https://www.youtube.com/watch?v=AIOAlaACuv4\">a decision</a>: leave tonight or live and die this way."
     }
   ];
 }
