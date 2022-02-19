@@ -197,11 +197,11 @@ function importAlbums() {
       trivia: "While touring for his massive hit \"<a href=\"https://www.youtube.com/watch?v=uB1D9wWxd2w\">Return of the Mack</a>,\" Mark wisely decided to bring a gun aboard a plane, a decision that cost him 3 months in jail as his hit peaked the charts. Afterwards, he was seen performing while holding a gun and wearing a t-shirt that said \"<a href=\"https://thebestmoviesnevermade.wordpress.com/2008/09/11/revenge-of-the-mack-the-mark-morrison-story/\">Only God Can Judge Me</a>\""
     },
     {
-      artist: "",
-      title: "",
-      date: new Date(2022, 1, 19),
-      image: "images/",
-      trivia: ""
+      artist: "Fugees",
+      title: "The Score",
+      date: new Date(2022, 1, 20),
+      image: "images/2022-02-20.jpg",
+      trivia: "<em><a href=\"https://www.youtube.com/watch?v=7UfVr5Xib50\">The Score</a></em> is the best selling hip-hop album of all time."
     }
   ];
 }
