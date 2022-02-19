@@ -188,6 +188,20 @@ function importAlbums() {
       date: new Date(2022, 1, 18),
       image: "images/2022-02-18.jpg",
       trivia: "Slept-on mid-period album from Eryka, whose first half features several <a href=\"https://www.youtube.com/watch?v=51OITPsjEu0\">languid</a> <a href=\"https://www.youtube.com/watch?v=BbVIsYRP5P4\">groovers</a>."
+    },
+    {
+      artist: "Mark Morrison",
+      title: "Return of the Mack",
+      date: new Date(2022, 1, 19),
+      image: "images/2022-02-19.jpg",
+      trivia: "While touring for his massive hit \"<a href=\"https://www.youtube.com/watch?v=uB1D9wWxd2w\">Return of the Mack</a>,\" Mark wisely decided to bring a gun aboard a plane, a decision that cost him 3 months in jail as his hit peaked the charts. Afterwards, he was seen performing while holding a gun and wearing a t-shirt that said \"<a href=\"https://thebestmoviesnevermade.wordpress.com/2008/09/11/revenge-of-the-mack-the-mark-morrison-story/\">Only God Can Judge Me</a>\""
+    },
+    {
+      artist: "",
+      title: "",
+      date: new Date(2022, 1, 19),
+      image: "images/",
+      trivia: ""
     }
   ];
 }
