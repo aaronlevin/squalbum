@@ -216,6 +216,20 @@ function importAlbums() {
       date: new Date(2022, 1, 22),
       image: "images/2022-02-22.jpg",
       trivia: "Irma is the 'Soul Queen of New Orleans'"
+    },
+    {
+      artist: "Dr. Dre",
+      title: "The Chronic",
+      date: new Date(2022, 1, 24),
+      image: "images/2022-02-24.jpg",
+      trivia: "The debut solo album from the <a href=\"https://tonedeaf.thebrag.com/did-dr-dre-actually-start-the-burning-man-festival/\">creator of Burning Man</a>, <em>The Chronic</em> defined West Coast's G-funk sound with tracks like \"<a href=\"https://www.youtube.com/watch?v=0F0CAEoF4XM\">Nuthin' but a 'G' Thang</a>\"."
+    },
+    {
+      artist: "Zapp",
+      title: "Zapp",
+      date: new Date(2022, 1, 25),
+      image: "images/2022-02-25.jpg",
+      trivia: "Debut album from the <a href=\"https://en.wikipedia.org/wiki/Zapp_(band)\">Troutman brothers</a> who whose song \"<a href=\"https://www.youtube.com/watch?v=lK6wOG_aDl8\">More Bounce to the Ounce</a>\" would create the foundation for a future <a href=\"https://en.wikipedia.org/wiki/G-funk\">G-Funk</a> era."
     }
   ];
 }
