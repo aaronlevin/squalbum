@@ -238,6 +238,25 @@ function importAlbums() {
       image: "images/2022-02-26.jpg"
     },
     {
+      artist: "James Brown",
+      title: "The Payback",
+      date: new Date(2022, 1, 27),
+      image: "images/2022-02-27.jpg",
+      trivia: "Brown's 37th album, now considered a high-point in his career, was rejected by movie producer Larry Cohen for \"not being funky enough\" according to James Brown. <a href=\"https://www.youtube.com/watch?v=D7ks03zsg1o&list=OLAK5uy_kEfri-fD4l3pKEYHurT8YeqPCsuKn3oVA\">Is it funky?</a>"
+    },
+    {
+      artist: "Maestro Fresh-Wes",
+      title: "Symphony in Effect",
+      date: new Date(2022, 1, 28),
+      image: "images/2022-02-28.jpg",
+      trivia: "Do not under any circumstance allow your <a href=\"https://www.youtube.com/watch?v=CsPS0lN-ulY\">back bone to slide</a>."
+    },
+    {
+      artist: "Joni Mitchell",
+      title: "Song to a Seagull",
+      date: new Date(2022, 2, 1),
+      image: "images/2022-03-01.jpg",
+      trivia: "Debut album from the lady of the canyon. <a href=\"https://www.youtube.com/watch?v=2NK0asxf2zk&list=OLAK5uy_lNB_iUvoSM0WB1esZ4oZ5mWYJkpPzDqqY&index=1\">Be my king?</a>"
     }
   ];
 }
