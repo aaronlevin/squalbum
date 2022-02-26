@@ -230,6 +230,14 @@ function importAlbums() {
       date: new Date(2022, 1, 25),
       image: "images/2022-02-25.jpg",
       trivia: "Debut album from the <a href=\"https://en.wikipedia.org/wiki/Zapp_(band)\">Troutman brothers</a> who whose song \"<a href=\"https://www.youtube.com/watch?v=lK6wOG_aDl8\">More Bounce to the Ounce</a>\" would create the foundation for a future <a href=\"https://en.wikipedia.org/wiki/G-funk\">G-Funk</a> era."
+    },
+    {
+      artist: "Frank Ocean",
+      title: "Blond",
+      date: new Date(2022, 1, 26),
+      image: "images/2022-02-26.jpg"
+    },
+    {
     }
   ];
 }
