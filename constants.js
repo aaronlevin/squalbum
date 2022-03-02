@@ -257,6 +257,13 @@ function importAlbums() {
       date: new Date(2022, 2, 1),
       image: "images/2022-03-01.jpg",
       trivia: "Debut album from the lady of the canyon. <a href=\"https://www.youtube.com/watch?v=2NK0asxf2zk&list=OLAK5uy_lNB_iUvoSM0WB1esZ4oZ5mWYJkpPzDqqY&index=1\">Be my king?</a>"
+    },
+    {
+      artist: "Michael Jackson",
+      title: "Off the Wall",
+      date: new Date(2022, 2, 2),
+      image: "images/2022-03-02.jpg",
+      trivia: "Michael Jackson's first collaboration with with producer <a href=\"https://en.wikipedia.org/wiki/Quincy_Jones\">Quincy Jones</a> is not to be mistaken by the <a href=\"https://en.wikipedia.org/wiki/Yoshi_Wada\">Yoshi Wada</a> album of the <a href=\"https://www.youtube.com/watch?v=-WEyg2mLYJ8\">same name</a>."
     }
   ];
 }
