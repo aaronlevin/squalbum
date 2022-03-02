@@ -271,6 +271,13 @@ function importAlbums() {
       date: new Date(2022, 2, 3),
       image: "images/2022-03-03.jpg",
       trivia: "Debut <a href=\"https://www.youtube.com/watch?v=2SWrIB75vc8&list=OLAK5uy_moR9X6cxRuocK1f6IA8WkC7iOkCALADcw\">solo album</a> from famed British producer and noted man-with-quite-a-skull <a href=\"https://en.wikipedia.org/wiki/Brian_Eno\">Brian Eno</a>."
+    },
+    {
+      artist: "Heart",
+      title: "Little Queen",
+      date: new Date(2022, 2, 4),
+      image: "images/2022-03-04.jpg",
+      trivia: "1977 sophmore album from the Wilson sisters et al., who are often mistaken for Canadians but are actually Americans who trekked north following a draft-dodging lover. <em>Little Queen</em> contains their hugely successful power-ballad \"<a href=\"https://www.youtube.com/watch?v=PeMvMNpvB5M\">Barracuda</a>\"."
     }
   ];
 }
