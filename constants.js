@@ -264,6 +264,13 @@ function importAlbums() {
       date: new Date(2022, 2, 2),
       image: "images/2022-03-02.jpg",
       trivia: "Michael Jackson's first collaboration with with producer <a href=\"https://en.wikipedia.org/wiki/Quincy_Jones\">Quincy Jones</a> is not to be mistaken by the <a href=\"https://en.wikipedia.org/wiki/Yoshi_Wada\">Yoshi Wada</a> album of the <a href=\"https://www.youtube.com/watch?v=-WEyg2mLYJ8\">same name</a>."
+    },
+    {
+      artist: "Brian Eno",
+      title: "Here Come the Warm Jets",
+      date: new Date(2022, 2, 3),
+      image: "images/2022-03-03.jpg",
+      trivia: "Debut <a href=\"https://www.youtube.com/watch?v=2SWrIB75vc8&list=OLAK5uy_moR9X6cxRuocK1f6IA8WkC7iOkCALADcw\">solo album</a> from famed British producer and noted man-with-quite-a-skull <a href=\"https://en.wikipedia.org/wiki/Brian_Eno\">Brian Eno</a>."
     }
   ];
 }
