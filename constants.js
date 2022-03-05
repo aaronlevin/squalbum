@@ -278,6 +278,13 @@ function importAlbums() {
       date: new Date(2022, 2, 4),
       image: "images/2022-03-04.jpg",
       trivia: "1977 sophmore album from the Wilson sisters et al., who are often mistaken for Canadians but are actually Americans who trekked north following a draft-dodging lover. <em>Little Queen</em> contains their hugely successful power-ballad \"<a href=\"https://www.youtube.com/watch?v=PeMvMNpvB5M\">Barracuda</a>\"."
+    },
+    {
+      artist: "Jodeci",
+      title: "Forever My Lady",
+      date: new Date(2022, 2, 5),
+      image: "images/2022-03-05.jpg",
+      trivia: "Debut album by the group that <a href=\"https://www.youtube.com/watch?v=fLiPhj2_ozQ\">broke everyone's heart</a>. Also check this <a href=\"https://en.wikipedia.org/wiki/LTJ_Bukem\">LTJ Bukem</a> remix of \"<a href=\"https://www.discogs.com/release/509068-Jodeci-Feenin-LTJ-Bukem-Remix\">Feenin'</a>\"."
     }
   ];
 }
