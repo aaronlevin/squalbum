@@ -285,6 +285,48 @@ function importAlbums() {
       date: new Date(2022, 2, 5),
       image: "images/2022-03-05.jpg",
       trivia: "Debut album by the group that <a href=\"https://www.youtube.com/watch?v=fLiPhj2_ozQ\">broke everyone's heart</a>. Also check this <a href=\"https://en.wikipedia.org/wiki/LTJ_Bukem\">LTJ Bukem</a> remix of \"<a href=\"https://www.discogs.com/release/509068-Jodeci-Feenin-LTJ-Bukem-Remix\">Feenin'</a>\"."
+    },
+    {
+      artist: "Glenn Gould",
+      title: "The Goldberg Variations",
+      date: new Date(2022, 2, 6),
+      image: "images/2022-03-06.jpg",
+      trivia: "The breakthrough album by Canada's most <a href=\"https://en.wikipedia.org/wiki/Glenn_Gould\">eccentric</a> pianist, and one of the most famous players of the 20th century. Glenn's grunts, groans, and croons can be <a href=\"https://www.youtube.com/watch?v=aEkXet4WX_c\">heard throughout</a> the recording."
+    },
+    {
+      artist: "Steve Reich",
+      title: "Music for 18 Musicians",
+      date: new Date(2022, 2, 7),
+      image: "images/images-2022-03-07.jpg",
+      trivia: "Reich's first album for the ECM label and a <a href=\"https://www.youtube.com/watch?v=ILpCKQlDmhc\">breakthrough album for minimalist music</a>. It was included in a list of David Bowie's 25 favourite albums. The piece involves <a href=\"https://en.wikipedia.org/wiki/Music_for_18_Musicians\">a lot of breathing</a> and contratry to the title, should be performed with more than 18 musicians, according to Reich."
+    },
+    {
+      artist: "Judee Sill",
+      title: "Judee Sill",
+      date: new Date(2022, 2, 8),
+      image: "images/2022-03-08.jpg",
+      trivia: "Debut album from the much beloved <a href=\"https://en.wikipedia.org/wiki/Judee_Sill\">cosmic robber</a>. The album was the first release on David Geffen's Asylum Records and features exceptional <a href=\"https://www.youtube.com/watch?v=J5CalHct6FA\">vocal processing</a>. Desert island material for sure."
+    },
+    {
+      artist: "Radiohead",
+      title: "OK Computer",
+      date: new Date(2022, 2, 9),
+      image: "images/2022-03-09.jpg",
+      trivia: "Radiohead's most commercially successful album."
+    },
+    {
+      artist: "MF Doom",
+      title: "Operation: Doomsday",
+      date: new Date(2022, 2, 10),
+      image: "images/2022-03-10.jpg",
+      trivia: "Debut album from the masked super villain. RIP."
+    },
+    {
+      artist: "Arcade Fire",
+      title: "Reflektor",
+      date: new Date(2022, 2, 11),
+      image: "images/2022-03-11.jpg",
+      trivia: "I don't know what to say about this album. It's Canadian."
     }
   ];
 }
