@@ -297,7 +297,7 @@ function importAlbums() {
       artist: "Steve Reich",
       title: "Music for 18 Musicians",
       date: new Date(2022, 2, 7),
-      image: "images/images-2022-03-07.jpg",
+      image: "images/2022-03-07.jpg",
       trivia: "Reich's first album for the ECM label and a <a href=\"https://www.youtube.com/watch?v=ILpCKQlDmhc\">breakthrough album for minimalist music</a>. It was included in a list of David Bowie's 25 favourite albums. The piece involves <a href=\"https://en.wikipedia.org/wiki/Music_for_18_Musicians\">a lot of breathing</a> and contratry to the title, should be performed with more than 18 musicians, according to Reich."
     },
     {

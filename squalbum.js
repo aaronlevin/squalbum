@@ -327,6 +327,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     '\'',
     '\"',
     '’',
+    ':',
+    '`'
   ]
 
   function replaceChars(str) {
