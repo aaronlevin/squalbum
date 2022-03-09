@@ -327,6 +327,20 @@ function importAlbums() {
       date: new Date(2022, 2, 11),
       image: "images/2022-03-11.jpg",
       trivia: "I don't know what to say about this album. It's Canadian."
+    },
+    {
+      artist: "David Bowie",
+      title: "Heroes",
+      date: new Date(2022, 2, 12),
+      image: "images/2022-03-12.jpg",
+      trivia: "I first heard the song \"<a href=\"https://www.youtube.com/watch?v=lXgkuM2NhYI\">Heroes</a>\" in the 1995 Etnies skateboarding video <a href=\"https://www.youtube.com/watch?v=5iElGgEUmWA\">High-5</a>, featuring Tom Penny."
+    },
+    {
+      artist: "Cybotron",
+      title: "Enter",
+      date: new Date(2022, 2, 13),
+      image: "images/2022-03-13.jpg",
+      trivia: "OK, this was a tough one. <a href=\"https://en.wikipedia.org/wiki/Cybotron_(American_band)\">Cybotron</a> is the Detroit-based elctro group formed by <a href=\"https://en.wikipedia.org/wiki/Juan_Atkins\">Juan Atkins</a> and <a href=\"https://en.wikipedia.org/wiki/Richard_Davis_(techno_artist)\">Richard Davis</a>. <em>Enter</em>, their proto-Techno debut released in 1983, contains the inexplicable and essential jammer \"<a href=\"https://www.youtube.com/watch?v=cpHtVWqY4dI\">Cosmic Cars</a>.\""
     }
   ];
 }
