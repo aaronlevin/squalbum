@@ -341,6 +341,13 @@ function importAlbums() {
       date: new Date(2022, 2, 13),
       image: "images/2022-03-13.jpg",
       trivia: "OK, this was a tough one. <a href=\"https://en.wikipedia.org/wiki/Cybotron_(American_band)\">Cybotron</a> is the Detroit-based elctro group formed by <a href=\"https://en.wikipedia.org/wiki/Juan_Atkins\">Juan Atkins</a> and <a href=\"https://en.wikipedia.org/wiki/Richard_Davis_(techno_artist)\">Richard Davis</a>. <em>Enter</em>, their proto-Techno debut released in 1983, contains the inexplicable and essential jammer \"<a href=\"https://www.youtube.com/watch?v=cpHtVWqY4dI\">Cosmic Cars</a>.\""
+    },
+    {
+      artist: "Harmonia",
+      title: "Musik von Harmonia",
+      date: new Date(2022, 2, 13),
+      image: "images/2022-03-14.jpg",
+      trivia: "Debut album from Krautrock supergroup <a href=\"https://en.wikipedia.org/wiki/Harmonia_(band)\">Harmonia</a>. I always got a 'lo-fi beats to chill to' vibe from \"<a href=\"https://www.youtube.com/watch?v=hf7ukxGkhfw\">Watusi</a>.\""
     }
   ];
 }
