@@ -635,6 +635,36 @@ document.addEventListener('DOMContentLoaded', (event) => {
       div.innerHTML = `<p>the artist for this album is: <strong>${todaysAlbum.artist}</strong>.</p><p>Goo luck!</p>`;
     }
 
+    // Render reveal
+    document.getElementById("reveal-action").addEventListener('click', (e) => {
+
+      // "click" all the tiles
+      gameObject.rectangles.forEach((rect) => {
+        rect.clicked = true;
+      });
+
+      // simulate guess
+      let guessEvent = {
+        type: 'guess',
+        guess: todaysAlbum.title,
+        historical: false
+      }
+      generalEventHandler(gameObject, guessEvent, canvas, ctx);
+
+      // close reveal modal
+      document
+        .getElementById("reveal")
+        .querySelectorAll(".modal-exit")
+        .forEach((exit) => {
+          exit.click();
+        });
+
+      // put guess in input 
+      const input = document.getElementById('album-guess');
+      input.value = todaysAlbum.title;
+
+    });
+
     // if game has already been completed,
     // simulate a guess
     if(gameObject.completed) {

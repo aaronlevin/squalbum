@@ -48,7 +48,10 @@
     <div id="dialog-failure"></div>
     <canvas id="canvas" width="600vw" height="600vh"></canvas>
     <menu class="create-your-own" id="hint-menu" data-modal="hint">
-      <button id="hint-btn">hint</div>
+      <button id="hint-btn">hint</button>
+    </menu>
+    <menu class="create-your-own" data-modal="reveal">
+      <button id="reveal-btn">reveal</button>
     </menu>
   </div>
 
@@ -134,6 +137,19 @@
     <div class="modal-container" id="modal-container-win">
       <button class="modal-close modal-exit">X</button>
       <div id="hint-contents"></div>
+    </div>
+  </div>
+
+  <!-- modal: reveal -->
+  <div class="modal" id="reveal">
+    <div class="modal-bg modal-exit"></div>
+    <div class="modal-container" id="modal-container-reveal">
+      <button class="modal-close modal-exit">X</button>
+      <div id="reveal-contents">
+        <h2>Reveal? Are you sure?!</h2>
+        <p>Clicking the button below will reveal the entire image and provide the album name:</p>
+        <button id="reveal-action">REVEAL ALBUM</button>
+      </div>
     </div>
   </div>
 
