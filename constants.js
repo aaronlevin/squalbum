@@ -348,6 +348,41 @@ function importAlbums() {
       date: new Date(2022, 2, 15),
       image: "images/2022-03-14.jpg",
       trivia: "Debut album from Krautrock supergroup <a href=\"https://en.wikipedia.org/wiki/Harmonia_(band)\">Harmonia</a>. I always got a 'lo-fi beats to chill to' vibe from \"<a href=\"https://www.youtube.com/watch?v=hf7ukxGkhfw\">Watusi</a>.\""
+    },
+    {
+      artist: "Stereolab",
+      title: "Dots And Loops",
+      date: new Date(2022, 2, 16),
+      image: "images/2022-03-16.png",
+      trivia: "Released in 1997, <em><a href=\"https://www.youtube.com/watch?v=QdnX8-HDgaY&list=OLAK5uy_mT8vNMuTyC-PLafWLfx7YIxcHL4N00SmA\">Dots And Loops</a></em> was <a href=\"https://en.wikipedia.org/wiki/Stereolab\">Stereolab</a>'s fifth and album first entry on the Billboard 200. A classic in the genre of \"weird band goes pop,\" <em>Dots And Loops</em> has had lasting significance."
+    },
+    {
+      artist: "Ultramagnetic MC's",
+      title: "Critical Beatdown",
+      date: new Date(2022, 2, 17),
+      image: "images/2022-03-17.jpg",
+      trivia: "Scorching debut 1988 from <a href=\"https://en.wikipedia.org/wiki/Kool_Keith\">Kool Keith</a>, <a href=\"https://en.wikipedia.org/wiki/Ced-Gee\">Ced Gee</a>, TR Love, and Moe Love, who together became <a href=\"https://en.wikipedia.org/wiki/Ultramagnetic_MCs\">Ultramagnetic MC's</a>. The album is known for its bizarre lyrics, as depicted by all the brain stuff on \"<a href=\"https://www.youtube.com/watch?v=q_wfhfErbSE\">Travelling At The Speed of Thought</a>.\""
+    },
+    {
+      artist: "Devo",
+      title: "Q: Are We Not Men? A: We Are Devo!",
+      date: new Date(2022, 2, 18),
+      image: "images/2022-03-18.jpg",
+      trivia: "I have a <a href=\"https://www.youtube.com/watch?v=Cwx_Qq56YTA\">gut feeling</a> you suckers struggled to get the punctuation right on this, the Brian Eno-produced debut from the band that would eventually give us \"<a href=\"https://www.youtube.com/watch?v=j_QLzthSkfM\">Whip it</a>.\""
+    },
+    {
+      artist: "Red Hot Chili Peppers",
+      title: "Blood Sugar Sex Magik",
+      date: new Date(2022, 2, 19),
+      image: "images/2022-03-19.jpg",
+      trivia: "Are you a chili or are you a pepper? As a kid I'd listen to \"<a href=\"https://www.youtube.com/watch?v=GLvohMXgcBo\">Under the Bridge</a>\" while playing <em>Street Fighter II<em>."
+    },
+    {
+      artist: "Pharoah Sanders",
+      title: "Karma",
+      date: new Date(2022, 2, 20),
+      image: "images/2022-03-20.jpg",
+      trivia: "We all hope the <a href=\"https://www.youtube.com/watch?v=ViweO33oo2Y\">creator has a master plan</a>."
     }
   ];
 }
