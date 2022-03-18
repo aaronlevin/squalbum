@@ -383,6 +383,20 @@ function importAlbums() {
       date: new Date(2022, 2, 20),
       image: "images/2022-03-20.jpg",
       trivia: "We all hope the <a href=\"https://www.youtube.com/watch?v=ViweO33oo2Y\">creator has a master plan</a>."
+    },
+    {
+      artist: "Led Zeppelin",
+      title: "Led Zeppelin",
+      date: new Date(2022, 2, 21),
+      image: "images/2022-03-21.jpg",
+      trivia: "I guarantee that if you turn on your radio right now, they're playing Led Zeppelin."
+    },
+    {
+      artist: "Madonna",
+      title: "Like A Virgin",
+      date: new Date(2022, 2, 22),
+      image: "images/2022-03-22.jpg",
+      trivia: "Maybe if I was more of a <a href=\"https://www.youtube.com/watch?v=6p-lDYPR2P8\">material girl</a> I would try and monetize this website."
     }
   ];
 }
