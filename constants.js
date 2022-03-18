@@ -361,7 +361,7 @@ function importAlbums() {
       title: "Critical Beatdown",
       date: new Date(2022, 2, 17),
       image: "images/2022-03-17.jpg",
-      trivia: "Scorching debut 1988 from <a href=\"https://en.wikipedia.org/wiki/Kool_Keith\">Kool Keith</a>, <a href=\"https://en.wikipedia.org/wiki/Ced-Gee\">Ced Gee</a>, TR Love, and Moe Love, who together became <a href=\"https://en.wikipedia.org/wiki/Ultramagnetic_MCs\">Ultramagnetic MC's</a>. The album is known for its bizarre lyrics, as depicted by all the brain stuff on \"<a href=\"https://www.youtube.com/watch?v=q_wfhfErbSE\">Travelling At The Speed of Thought</a>.\""
+      trivia: "Scorching 1988 debut from <a href=\"https://en.wikipedia.org/wiki/Kool_Keith\">Kool Keith</a>, <a href=\"https://en.wikipedia.org/wiki/Ced-Gee\">Ced Gee</a>, TR Love, and Moe Love, who together became <a href=\"https://en.wikipedia.org/wiki/Ultramagnetic_MCs\">Ultramagnetic MC's</a>. The album is known for its bizarre lyrics, as depicted by all the brain stuff on \"<a href=\"https://www.youtube.com/watch?v=q_wfhfErbSE\">Travelling At The Speed of Thought</a>.\""
     },
     {
       artist: "Devo",
