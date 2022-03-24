@@ -397,6 +397,41 @@ function importAlbums() {
       date: new Date(2022, 2, 22),
       image: "images/2022-03-22.jpg",
       trivia: "Maybe if I was more of a <a href=\"https://www.youtube.com/watch?v=6p-lDYPR2P8\">material girl</a> I would try and monetize this website."
+    },
+    {
+      artist: "DJ Shadow",
+      title: "Endtroducing",
+      date: new Date(2022, 2, 24),
+      image: "images/2022-03-24.jpg",
+      trivia: "DJ Shadow's landmark 1996 debut that set the bar for instrumental hip-hop. Tracks like \"<a href=\"https://www.youtube.com/watch?v=InFbBlpDTfQ\">Midnight in a Perfect World</a>\" and \"<a href=\"https://www.youtube.com/watch?v=bfwXxRNVqi4\">Organ Donor</a>\" still sound fresh today."
+    },
+    {
+      artist: "The Police",
+      title: "Ghost in the Machine",
+      date: new Date(2022, 2, 25),
+      image: "images/2022-03-25.jpg",
+      trivia: "Not to be mistaken with the anime of a different name."
+    },
+    {
+      artist: "Rush",
+      title: "Rush",
+      date: new Date(2022, 2, 26),
+      image: "images/2022-03-26.jpg",
+      trivia: "Were you tricked by the color of \"Rush\"? The first pressing of Rush's 1971 debut came out on their own imprint, <a href=\"https://www.discogs.com/label/342538-Moon-Records-18\">Moon Records</a>, in a pressing of 3,500. In some later pressings the \"Rush\" on the cover is purple."
+    },
+    {
+      artist: "Herbie Hancock",
+      title: "Head Hunters",
+      date: new Date(2022, 2, 27),
+      image: "images/2022-03-27.jpg",
+      trivia: "Landmark and genre-defining jazz-funk album from 1973. Released, remarkably, 10 years into Herbie's career, <em>Head Hunters</em> became one of the best selling jazz albums of all time. See \"<a href=\"https://www.youtube.com/watch?v=WYRrIBqKsJ4\">Chameleon</a>\" or \"<a href=\"https://www.youtube.com/watch?v=ppJQKfqhFfE\">Watermelon Man</a>\" if you haven't before."
+    },
+    {
+      artist: "Björk",
+      title: "Post",
+      date: new Date(2022, 2, 28),
+      image: "images/2022-03-28.jpg",
+      trivia: "Björk's second album, <em>Post</em>, is <a href=\"https://www.youtube.com/watch?v=Y0saUw2GTTE\">possibly maybe</a> the album from her I listened to most as a kid."
     }
   ];
 }
