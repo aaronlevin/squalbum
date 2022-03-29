@@ -432,6 +432,41 @@ function importAlbums() {
       date: new Date(2022, 2, 28),
       image: "images/2022-03-28.jpg",
       trivia: "Björk's second album, <em>Post</em>, is <a href=\"https://www.youtube.com/watch?v=Y0saUw2GTTE\">possibly maybe</a> the album from her I listened to most as a kid."
+    },
+    {
+      artist: "Neu!",
+      title: "Neu!",
+      date: new Date(2022, 2, 30),
+      image: "images/2022-03-30.jpg",
+      trivia: "<a href=\"https://www.youtube.com/watch?v=vQCTTvUqhOQ\">Driving</a> 1972 debut from Dinger and Rother after their split from Kraftwerk."
+    },
+    {
+      artist: "Townes van Zandt",
+      title: "Our Mother The Mountain",
+      date: new Date(2022, 2, 31),
+      image: "images/2022-03-31.jpg",
+      trivia: "Second album from the one of the saddest dudes. Peep \"<a href=\"https://www.youtube.com/watch?v=DW4XgQvcDsQ\">Our Mother The Mountain</a>.\""
+    },
+    {
+      artist: "Shirley Collins, Davey Graham",
+      title: "Folk Roots, New Routes",
+      date: new Date(2022, 3, 1),
+      image: "images/2022-04-01.jpg",
+      trivia: "The most ambitious crossover event in folk history. Hear \"<a href=\"https://www.youtube.com/watch?v=ZdMMvKpgBqE\">Nottamun Town</a>.\""
+    },
+    {
+      artist: "Syl Johnson",
+      title: "Is It Because I'm Black?",
+      date: new Date(2022, 3, 2),
+      image: "images/2022-04-02.jpg",
+      trivia: "One of the deepest cuts of all time. Listen: \"<a href=\"https://www.youtube.com/watch?v=KxvquwCqC2w\">Is It Because I'm Black</a>.\""
+    },
+    {
+      artist: "Pink Floyd",
+      title: "Meddle",
+      date: new Date(2022, 3, 3),
+      image: "images/2022-04-03.jpg",
+      trivia: "You have to respect a band that steps into a studio without any ideas and walk out with a <a href=\"https://www.youtube.com/watch?v=53N99Nim6WE\">23-minute jammer</a>. "
     }
   ];
 }
