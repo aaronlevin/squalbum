@@ -467,6 +467,46 @@ function importAlbums() {
       date: new Date(2022, 3, 3),
       image: "images/2022-04-03.jpg",
       trivia: "You have to respect a band that steps into a studio without any ideas and walk out with a <a href=\"https://www.youtube.com/watch?v=53N99Nim6WE\">23-minute jammer</a>. "
+    },
+    {
+      artist: "Metallica",
+      title: "Kill 'Em All",
+      date: new Date(2022, 3, 6),
+      image: "images/2022-04-06.jpg",
+    },
+    {
+      artist: "Zamfir",
+      title: "The Lonely Shepherd",
+      date: new Date(2022, 3, 7),
+      image: "images/2022-04-07.jpg",
+      trivia: "The album that clutters every dollar bin and thrift store across the country. The album that became Gheorghe Zamfir's international breakthrough release. And the album that was featured during a key scene in Tarantino's <em><a href=\"https://www.youtube.com/watch?v=nsgHyzwmbnQ\">Kill Bill</a></em>."
+    },
+    {
+      artist: "Bob Marley & The Wailers",
+      title: "Legend",
+      date: new Date(2022, 3, 8),
+      image: "images/2022-04-08.jpg",
+      trivia: "Quintessential compilation of Bob's greatest works."
+    },
+    {
+      artist: "The Beatles",
+      title: "The Beatles",
+      date: new Date(2022, 3, 9),
+      image: "images/2022-04-09.jpg",
+      trivia: "I had to do it."
+    },
+    {
+      artist: "Britney Spears",
+      title: "...Baby One More Time",
+      date: new Date(2022, 3, 10),
+      image: "images/2022-04-10.jpg",
+      trivia: "Hopefully you got some help from the hype sticker off this 2017 reissue."
+    },
+    {
+      artist: "Ramones",
+      title: "Ramones",
+      date: new Date(2022, 3, 11),
+      image: "images/2022-04-11.jpg",
     }
   ];
 }
