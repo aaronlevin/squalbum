@@ -507,6 +507,55 @@ function importAlbums() {
       title: "Ramones",
       date: new Date(2022, 3, 11),
       image: "images/2022-04-11.jpg",
+    },
+    {
+      artist: "Def Leppard",
+      title: "Hysteria",
+      date: new Date(2022, 3, 13),
+      image: "images/2022-03-13.jpg",
+      trivia: "This was my first favorite album."
+    },
+    {
+      artist: "Hole",
+      title: "Pretty on the Inside",
+      date: new Date(2022, 3, 14),
+      image: "images/2022-03-14.jpg",
+      trivia: "A friend and I debated whether this was grunge or not."
+    },
+    {
+      artist: "Julie",
+      title: "Julie Is Her Name",
+      date: new Date(2022, 3, 15),
+      image: "images/2022-03-15.jpg",
+      trivia: "Debut album from Julie London. Spawned London Records' biggest hit, \"<a href=\"https://www.youtube.com/watch?v=gCGNYJOrebA\">Cry Me A River</a>.\"",
+    },
+    {
+      artist: "MIA",
+      title: "Kala",
+      date: new Date(2022, 3, 16),
+      image: "images/2022-03-16.jpg",
+      trivia: "MIA's third album from 2007 that contained her breakthrough hit \"<a href=\"https://www.youtube.com/watch?v=ewRjZoRtu0Y\">Paper Planes</a>.\""
+    },
+    {
+      artist: "Muddy Waters",
+      title: "Electric Mud",
+      date: new Date(2022, 3, 17),
+      image: "images/2022-03-17.jpg",
+      trivia: "Muddy Waters went pyschedelic on his fifth album, <em>Electric Mud</em>, featuring <a href=\"https://en.wikipedia.org/wiki/Rotary_Connection\">Rotary Connection</a> as his backing band. \"<a href=\"https://www.youtube.com/watch?v=bmY4lnFvdy8\">I Just Want To Make Love To You</a>.\""
+    },
+    {
+      artist: "La Monte Young",
+      title: "The Well-Tuned Piano",
+      date: new Date(2022, 3, 18),
+      image: "images/2022-03-18.jpg",
+      trivia: "I didn't make you suffer the entire title of La Monte Young's 5xLP endurance test, <em>The Well-Tuned Piano 81 X 25 6:17:50 - 11:18:59 PM NYC</em>. I watched <a href=\"https://www.ubu.com/film/young_well-tuned.html\">the video</a> and, no, he does not take a bathroom break nor is he wearing a diaper."
+    },
+    {
+      artist: "Backstreet Boys",
+      title: "Backstreet's Back",
+      date: new Date(2022, 3, 19),
+      image: "images/2022-03-19.jpg",
+      trivia: "They're <a href=\"https://www.youtube.com/watch?v=6M6samPEMpM\">back</a>, baby."
     }
   ];
 }
