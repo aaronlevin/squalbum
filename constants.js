@@ -560,14 +560,14 @@ function importAlbums() {
     {
       artist: "Billy Joel",
       title: "Glass Houses",
-      date: new Date(2022, 3, 20),
+      date: new Date(2022, 3, 21),
       image: "images/2022-04-20.jpg",
       trivia: "What do I say about this record? I see <em>Glass Houses</em> in dollar bins the world over and am troubled by the future where it costs $20."
     },
     {
       artist: "Miles Davis",
       title: "On The Corner",
-      date: new Date(2022, 3, 21),
+      date: new Date(2022, 3, 22),
       image: "images/2022-04-21.jpg",
       trivia: "A lot of living with adhd is <a href=\"https://www.youtube.com/watch?v=hfaR_lIV87M\">Thinkin' of One Thing and Doin' Another</a>"
     },
