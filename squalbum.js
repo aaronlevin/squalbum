@@ -318,7 +318,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   const REPLACEMENTS = [
-    ['&', 'and']
+    ['&', 'and'],
+    ['motion picture soundtrack', 'ost']
   ];
 
   const REMOVALS = [
@@ -329,7 +330,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     '’',
     ':',
     '`',
-    ','
+    ',',
+    '™',
+    '(',
+    ')'
   ]
 
   function replaceChars(str) {
@@ -471,6 +475,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // handle a guess
   function handleGuessEvent(gameObject, event, canvas) {
     let guess = event.guess;
+    console.log(`original: ${guess}`);
+    console.log(`clean gu: ${cleanString(guess)}`);
+    console.log(`clean og: ${cleanString(guess)}`);
     let guessedCorrectly = cleanString(guess) === cleanString(todaysAlbum.title);
     if (guessedCorrectly) {
       // update game object to reflect a correct guess

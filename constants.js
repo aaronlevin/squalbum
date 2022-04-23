@@ -571,5 +571,45 @@ function importAlbums() {
       image: "images/2022-04-21.jpg",
       trivia: "A lot of living with adhd is <a href=\"https://www.youtube.com/watch?v=hfaR_lIV87M\">Thinkin' of One Thing and Doin' Another</a>"
     },
+    {
+      artist: "The Turtles",
+      title: "Happy Together",
+      date: new Date(2022, 3, 23),
+      image: "images/2022-04-23.jpg"
+    },
+    {
+      artist: "The Cars",
+      title: "The Cars",
+      date: new Date(2022, 3, 24),
+      image: "images/2022-04-24.jpg"
+    },
+    {
+      artist: "Missy Elliott",
+      title: "Supa Dupa Fly",
+      date: new Date(2022, 3, 25),
+      image: "images/2022-04-25.jpg",
+      trivia: "Missy's 1997 debut, featuring the <a href=\"https://www.youtube.com/watch?v=hHcyJPTTn9w\">hit with the same name</a>.",
+    },
+    {
+      artist: "Prince",
+      title: "Batman™ (Motion Picture Soundtrack)",
+      date: new Date(2022, 3, 26),
+      image: "images/2022-04-26.jpg",
+      trivia: "Huge soundtrack, great movie.",
+    },
+    {
+      artist: "Slayer",
+      title: "Reign In Blood",
+      date: new Date(2022, 3, 27),
+      image: "images/2022-04-27.jpg",
+      trivia: "<a href=\"https://www.youtube.com/watch?v=r7cWi41XGCM\">Listen at maximum volume</a>.",
+    },
+    {
+      artist: "Portishead",
+      title: "Dummy",
+      date: new Date(2022, 3, 28),
+      image: "images/2022-04-28.jpg",
+      trivia: "Portishead's 1994 debut, featuring my favourite track from them: \"<a href=\"https://www.youtube.com/watch?v=Aw8GucJ4f7E\">It Could Be Sweet</a>.\"",
+    }
   ];
 }
