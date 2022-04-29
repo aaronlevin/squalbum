@@ -610,6 +610,48 @@ function importAlbums() {
       date: new Date(2022, 3, 28),
       image: "images/2022-04-28.jpg",
       trivia: "Portishead's 1994 debut, featuring my favourite track from them: \"<a href=\"https://www.youtube.com/watch?v=Aw8GucJ4f7E\">It Could Be Sweet</a>.\"",
+    },
+    {
+      artist: "Van Morrison",
+      title: "Blowin' Your Mind!",
+      date: new Date(2022, 3, 30),
+      image: "images/2022-04-30.jpg",
+      trivia: "Van's debut album featuring his hit \"<a href=\"https://www.youtube.com/watch?v=-6W7ZzSUizA\">Brown Eyed Girl</a>.\" To be honest I'd never seen this album cover in my life before this."
+    },
+    {
+      artist: "Alice Coltrane",
+      title: "Universal Consciousness",
+      date: new Date(2022, 4, 1),
+      image: "images/2022-05-01.jpg",
+      trivia: "Alice's fifth album. <em>Universal Consciousness</em> features a beautiful balance between the hard, free improvisation of its title track and the lovely, meandering drones in \"<a href=\"https://www.youtube.com/watch?v=wj2HHescM3Y\">Sita Ram</a>.\""
+    },
+    {
+      artist: "Autechre",
+      title: "Amber",
+      date: new Date(2022, 4, 2),
+      image: "images/2022-05-02.jpg",
+      trivia: "Second album from the British electronic duo everyone loves to file. Released in 1994, <em>Amber</em> is considered the genuine first album Autechre released on Warp Records. Here's a song bearing the name of my town: \"<a href=\"https://www.youtube.com/watch?v=h_segRH6LKA\">Montreal</a>.\""
+    },
+    {
+      artist: "Clipse",
+      title: "Hell Hath No Fury",
+      date: new Date(2022, 4, 3),
+      image: "images/2022-05-03.jpg",
+      trivia: "Second cook book from the best chefs in Virginia. The Neptunes went <a href=\"https://en.wikipedia.org/wiki/Steve_Reich\">Reich</a> minimal with the productio on <em>Hell Hath No Fury</em>, as exemplified by \"<a href=\"https://www.youtube.com/watch?v=TdJjqApa3e0\">Mr. Me Too</a>.\""
+    },
+    {
+      artist: "Blondie",
+      title: "Parallel Lines",
+      date: new Date(2022, 4, 4),
+      image: "images/2022-05-04.jpg",
+      trivia: "Second album from Blondie featuring their hit \"<a href=\"https://www.youtube.com/watch?v=uWhkbDMISl8\">Hanging On The Telephone</a>,\" itself a cover of a song with <a href=\"https://www.youtube.com/watch?v=emy5mA8Ixtc\">the same name</a> by The Nerves. I prefer the Blondie version."
+    },
+    {
+      artist: "13th Floor Elevators",
+      title: "The Psychedelic Sounds Of The 13th Floor Elevators",
+      date: new Date(2022, 4, 5),
+      image: "images/2022-05-05.jpg",
+      trivia: "The August 1966 debut from the 13th Floor Elevators is the first album to describe its music as \"psychedelic.\" Featuring the electric-jug ladened hits like \"<a href=\"https://www.youtube.com/watch?v=YIVpHNEPzDM\">You're Gonna Miss Me</a>\" or my favorite, the somber \"<a href=\"https://www.youtube.com/watch?v=AkLRPDuuP2c\">Don't Fall Down</a>.\""
     }
   ];
 }
