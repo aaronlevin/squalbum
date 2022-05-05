@@ -652,6 +652,42 @@ function importAlbums() {
       date: new Date(2022, 4, 5),
       image: "images/2022-05-05.jpg",
       trivia: "The August 1966 debut from the 13th Floor Elevators is the first album to describe its music as \"psychedelic.\" Featuring the electric-jug ladened hits like \"<a href=\"https://www.youtube.com/watch?v=YIVpHNEPzDM\">You're Gonna Miss Me</a>\" or my favorite, the somber \"<a href=\"https://www.youtube.com/watch?v=AkLRPDuuP2c\">Don't Fall Down</a>.\""
-    }
+    },
+    {
+      artist: "Nirvana",
+      title: "Bleach",
+      date: new Date(2022, 4, 6),
+      image: "images/2022-05-06.jpg",
+      trivia: "Debut album from everyone's favourite guy."
+    },
+    {
+      artist: "P J Harvey",
+      title: "Rid of Me",
+      date: new Date(2022, 4, 7),
+      image: "images/2022-05-07.jpg",
+      trivia: "Harvey's 1993 breakthrough album."
+    },
+    {
+      artist: "The Doors",
+      title: "Strange Days",
+      date: new Date(2022, 4, 8),
+      image: "images/2022-05-08.jpg",
+      trivia: "Debut album from the people whomst'd are strange."
+    },
+    {
+      artist: "Tortoise",
+      title: "Millions Now Living Will Never Die",
+      date: new Date(2022, 4, 9),
+      image: "images/2022-05-09.jpg",
+      trivia: "Breakthrough 1996 album from indie rock alum Tortoise. Or at least I think it was the breakthrough. It's the cover I know but I've never listened to this band."
+    },
+    {
+      artist: "Whitney Houston",
+      title: "Whitney",
+      date: new Date(2022, 4, 10),
+      image: "images/2022-05-10.jpg",
+      trivia: "<a href=\"https://www.youtube.com/watch?v=eH3giaIzONA\">I wanna dance with somebody</a>."
+    },
+
   ];
 }
