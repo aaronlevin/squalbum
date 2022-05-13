@@ -688,6 +688,54 @@ function importAlbums() {
       image: "images/2022-05-10.jpg",
       trivia: "<a href=\"https://www.youtube.com/watch?v=eH3giaIzONA\">I wanna dance with somebody</a>."
     },
-
+    {
+      artist: "The Rolling Stones",
+      title: "Voodoo Lounge",
+      date: new Date(2022, 4, 14),
+      image: "images/2022-05-14.jpg",
+      trivia: "The song \"<a href=\"https://www.youtube.com/watch?v=NepcAaKXNuM\">Thru and Thru</a>\" was featured in an episode of <em>The Sopranos</em>."
+    },
+    {
+      artist: "Lucinda Williams",
+      title: "Happy Woman Blues",
+      date: new Date(2022, 4, 15),
+      image: "images/2022-05-15.jpg",
+      trivia: "Lucinda's second LP on Folkways and her <a href=\"https://www.discogs.com/release/13210145-Lucinda-Williams-Happy-Woman-Blues\">most expensive</a>."
+    },
+    {
+      artist: "Animal Collective",
+      title: "Merriweather Post Pavilion",
+      date: new Date(2022, 4, 16),
+      image: "images/2022-05-16.jpg",
+      trivia: "The Animal's 2008 breakthrough album featuring an anthem <a href=\"https://www.youtube.com/watch?v=zol2MJf6XNE\">for dads</a>."
+    },
+    {
+      artist: "Queens Of The Stone Age",
+      title: "Songs For The Deaf",
+      date: new Date(2022, 4, 17),
+      image: "images/2022-05-17.jpg",
+      trivia: "Fewer albums embody the male college spirit like <em>Songs for The Deaf</em>."
+    },
+    {
+      artist: "Corona",
+      title: "This Is The Rhythm Of The Night",
+      date: new Date(2022, 4, 18),
+      image: "images/2022-05-18.jpg",
+      trivia: "Yeah, I didn't know she had a whole LP either. But, wow, this scene from <em><a href=\"https://www.youtube.com/watch?v=grGiq0yTaj4&t=258s\"></a></em> is incredible."
+    },
+    {
+      artist: "Mulatu Astatke",
+      title: "Mulatu Of Ethiopia",
+      date: new Date(2022, 4, 19),
+      image: "images/2022-05-19.jpg",
+      trivia: "Legendary 1972 album that introduced the world to <a href=\"https://www.youtube.com/watch?v=0ApwZaao0Q8\">Ethiopian jazz</a>."
+    },
+    {
+      artist: "Al Green",
+      title: "I'm Still In Love With You",
+      date: new Date(2022, 4, 20),
+      image: "images/2022-05-20.jpg",
+      trivia: "Al's fifth album from 1972 featuring the hit \"<a href=\"https://www.youtube.com/watch?v=IQl54ozhwZg\">Love And Happiness</a>.\""
+    }
   ];
 }
