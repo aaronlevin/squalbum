@@ -692,7 +692,7 @@ function importAlbums() {
       artist: "Grateful Dead",
       title: "American Beauty",
       date: new Date(2022, 4, 13),
-      images: "images/2022-05-13.jpg",
+      image: "images/2022-05-13.jpg",
       trivia: "Get on the bus."
     },
     {
