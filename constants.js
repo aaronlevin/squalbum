@@ -689,6 +689,13 @@ function importAlbums() {
       trivia: "<a href=\"https://www.youtube.com/watch?v=eH3giaIzONA\">I wanna dance with somebody</a>."
     },
     {
+      artist: "Grateful Dead",
+      title: "American Beauty",
+      date: new Date(2022, 4, 13),
+      images: "images/2022-05-13.jpg",
+      trivia: "Get on the bus."
+    },
+    {
       artist: "The Rolling Stones",
       title: "Voodoo Lounge",
       date: new Date(2022, 4, 14),
