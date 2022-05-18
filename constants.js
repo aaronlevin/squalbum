@@ -725,7 +725,7 @@ function importAlbums() {
     },
     {
       artist: "Corona",
-      title: "This Is The Rhythm Of The Night",
+      title: "The Rhythm Of The Night",
       date: new Date(2022, 4, 18),
       image: "images/2022-05-18.jpg",
       trivia: "Yeah, I didn't know she had a whole LP either. But, wow, this scene from <em><a href=\"https://www.youtube.com/watch?v=grGiq0yTaj4&t=258s\"></a></em> is incredible."
